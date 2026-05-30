@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initFaqAccordion();
   initSmoothScroll();
   initHeaderScroll();
+  initCounterAnimation();
 });
 
 /**
@@ -118,7 +119,8 @@ function initHeaderScroll() {
  * Scroll-triggered fade-in animations using IntersectionObserver
  */
 function initScrollAnimations() {
-  var elements = document.querySelectorAll('.fade-in');
+  var selectors = '.fade-in, .fade-in-left';
+  var elements = document.querySelectorAll(selectors);
 
   if (!elements.length) return;
 
@@ -140,4 +142,56 @@ function initScrollAnimations() {
   );
 
   elements.forEach(function (el) { observer.observe(el); });
+}
+
+/**
+ * Animated counter for statistics
+ */
+function initCounterAnimation() {
+  var counters = document.querySelectorAll('.stat-counter');
+  if (!counters.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    counters.forEach(function (el) { el.textContent = el.getAttribute('data-target'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  counters.forEach(function (el) { observer.observe(el); });
+}
+
+function animateCounter(el) {
+  var target = parseInt(el.getAttribute('data-target'), 10);
+  if (isNaN(target)) return;
+
+  var start = 0;
+  var duration = 1500;
+  var startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    var progress = Math.min((timestamp - startTime) / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    var current = Math.floor(eased * target);
+    el.textContent = current;
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      el.textContent = target;
+    }
+  }
+
+  requestAnimationFrame(step);
 }

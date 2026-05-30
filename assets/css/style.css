@@ -1756,3 +1756,157 @@ h1, h2, h3, h4, h5, h6 {
     height: 160px;
   }
 }
+
+/* ==========================================
+   Enhanced Animations & Effects
+   ========================================== */
+
+/* Hero entrance */
+.hero-badge {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFadeIn 0.5s ease 0.2s forwards;
+}
+
+.hero-title {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFadeIn 0.5s ease 0.35s forwards;
+}
+
+.hero-subtitle {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFadeIn 0.5s ease 0.5s forwards;
+}
+
+.hero-buttons {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFadeIn 0.5s ease 0.65s forwards;
+}
+
+.hero-ticker {
+  opacity: 0;
+  animation: heroFadeIn 0.5s ease 0.8s forwards;
+}
+
+.hero-stats {
+  opacity: 0;
+  animation: heroFadeIn 0.5s ease 0.95s forwards;
+}
+
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in from left for section titles */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Enhanced product card hover */
+.product-card:hover {
+  border-color: rgba(124, 58, 237, 0.25);
+  box-shadow: 0 12px 48px rgba(124, 58, 237, 0.18);
+  transform: translateY(-8px);
+}
+
+/* Button hover enhancements */
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.35);
+  color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px) scale(1.02);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-dim);
+}
+
+/* CTA buttons hover */
+.cta .btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: var(--color-accent-hover);
+}
+
+.cta .btn-secondary:hover {
+  transform: translateY(-2px) scale(1.02);
+  border-color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+/* Feature icon card hover */
+.feature-icon-card:hover {
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+/* Blog card hover enhancement */
+.blog-card:hover {
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.12);
+  transform: translateY(-4px);
+}
+
+/* Step card hover */
+.step-mini-card:hover {
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.step-mini-card {
+  transition: all var(--transition);
+}
+
+/* Exchange card hover */
+.exchange-card:hover {
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.exchange-card {
+  transition: all var(--transition);
+}
+
+/* Trader profile hover */
+.trader-profile:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
+.trader-profile {
+  transition: all var(--transition);
+}
+
+/* Header shadow enhancement on scroll */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* For-whom cards hover */
+.for-whom-card:hover {
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+}
+
+.for-whom-card {
+  transition: all var(--transition);
+}
