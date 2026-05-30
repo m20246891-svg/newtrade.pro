@@ -864,6 +864,345 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
+/* --- Product Hero (inner pages) --- */
+.page-hero {
+  padding: 140px 0 60px;
+  background: var(--gradient-hero);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.page-hero-info {
+  max-width: 560px;
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.page-hero p {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.page-hero-gif {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.page-hero-gif::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(ellipse at center, var(--color-accent-glow) 0%, transparent 60%);
+  z-index: 0;
+  border-radius: var(--radius-lg);
+}
+
+.page-hero-gif .gif-placeholder {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.page-hero-gif .gif-placeholder span {
+  display: block;
+  font-size: 0.82rem;
+  margin-top: 10px;
+  color: var(--color-text-muted);
+}
+
+/* --- Page Section --- */
+.page-section {
+  padding: 80px 0;
+}
+
+.page-section:nth-child(even) {
+  background: var(--color-bg-alt);
+}
+
+.page-section .section-header {
+  margin-bottom: 48px;
+}
+
+/* --- Features With Icons --- */
+.features-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.features-icon-grid.two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.feature-icon-card {
+  display: flex;
+  gap: 20px;
+  padding: 28px 24px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+}
+
+.feature-icon-card:hover {
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon-card .ficon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-purple-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon-card .ficon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-icon-card h4 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.feature-icon-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* --- Mini Steps (3 columns) --- */
+.steps-mini {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.step-mini-card {
+  text-align: center;
+  padding: 32px 24px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  position: relative;
+}
+
+.step-mini-card:hover {
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.step-mini-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin: 0 auto 16px;
+}
+
+.step-mini-card h4 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.step-mini-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+/* --- Screenshot Block --- */
+.screenshot-block {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.screenshot-block .screenshot-glow {
+  position: absolute;
+  inset: -3px;
+  background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.screenshot-block .screenshot-inner {
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+}
+
+.screenshot-block .screenshot-inner p {
+  font-size: 0.82rem;
+  margin-top: 12px;
+  color: var(--color-text-muted);
+  max-width: 400px;
+}
+
+/* --- Exchange Cards --- */
+.exchange-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.exchange-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.exchange-card:hover {
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.exchange-card .ex-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  background: var(--color-purple-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--color-accent);
+}
+
+.exchange-card h4 {
+  font-size: 1.05rem;
+}
+
+.exchange-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+
+/* --- Trader Profile / Stats --- */
+.trader-profile {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.trader-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.trader-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.trader-meta h4 {
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.trader-meta p {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.trader-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.trader-stat {
+  text-align: center;
+  padding: 12px;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-sm);
+}
+
+.trader-stat .ts-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-accent);
+}
+
+.trader-stat .ts-label {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.trader-stat .ts-value.green { color: var(--color-green); }
+.trader-stat .ts-value.red { color: var(--color-red); }
+
 /* --- CTA Section --- */
 .cta {
   padding: 100px 0;
@@ -1077,6 +1416,15 @@ h1, h2, h3, h4, h5, h6 {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Product pages */
+  .features-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .exchange-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1168,6 +1516,45 @@ h1, h2, h3, h4, h5, h6 {
   .ticker-wrap::before,
   .ticker-wrap::after {
     width: 30px;
+  }
+
+  /* Product pages responsive */
+  .page-hero .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .page-hero {
+    padding: 120px 0 40px;
+  }
+
+  .page-hero-info {
+    max-width: 100%;
+  }
+
+  .features-icon-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-icon-grid.two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-mini {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .exchange-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trader-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trader-profile {
+    padding: 24px;
   }
 }
 

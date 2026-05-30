@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=2" />
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
 </head>
 <body>
@@ -42,14 +42,15 @@
     <div class="container">
       <a href="../" class="logo" aria-label="NewTrade.pro на главную">
         <span class="logo-icon">NT</span>
-        NewTrade<span>.pro</span>
+        NewTrade<span class="logo-text-accent">.pro</span>
       </a>
       <nav class="nav" role="navigation" aria-label="Основное меню">
-        <a href="../">Главная</a>
-        <a href="indicators.html" class="active">Индикаторы</a>
-        <a href="trading-robot.html">Торговый робот</a>
-        <a href="copy-trading.html">Копитрейдинг</a>
-        <a href="../blog/">Блог</a>
+        <div class="nav-links">
+          <a href="../">Главная</a>
+          <a href="indicators.html" class="active">Индикаторы</a>
+          <a href="trading-robot.html">Торговый робот</a>
+          <a href="copy-trading.html">Копитрейдинг</a>
+        </div>
       </nav>
       <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -58,42 +59,182 @@
   </header>
 
   <main role="main">
-    <section class="page-header">
+
+    <!-- ============================================================ -->
+    <!-- 1. Hero + GIF -->
+    <!-- ============================================================ -->
+    <section class="page-hero">
       <div class="container">
-        <span class="section-badge">Продукт</span>
-        <h1>Индикаторы <span class="text-gradient">TradingView</span></h1>
-        <p>Профессиональные индикаторы с AI-анализом для платформы TradingView. Разработаны на Pine Script для максимальной производительности.</p>
-      </div>
-    </section>
-
-    <section class="page-content">
-      <div class="container">
-        <div class="content-section">
-          <h2>О продукте</h2>
-          <p>Наши индикаторы для TradingView используют алгоритмы машинного обучения для анализа рыночных данных в реальном времени. Они автоматически определяют паттерны, строят уровни поддержки и сопротивления, а также дают прогнозы движения цены.</p>
-          <p>Все индикаторы написаны на Pine Script v5 и оптимизированы для быстрой работы даже на больших таймфреймах.</p>
+        <div class="page-hero-info">
+          <span class="section-badge">Продукт</span>
+          <h1>Индикаторы <span class="text-gradient">TradingView</span></h1>
+          <p>Профессиональные индикаторы с AI-анализом для платформы TradingView. Разработаны на Pine Script — работают прямо в твоём графике.</p>
+          <a href="../#products" class="btn btn-primary">Все продукты</a>
         </div>
-
-        <div class="content-section">
-          <h2>Ключевые возможности</h2>
-          <ul class="feature-list">
-            <li><strong>AI-анализ паттернов</strong>Автоматическое распознавание свечных и графических паттернов</li>
-            <li><strong>Уровни поддержки/сопротивления</strong>Динамическое построение ключевых уровней на основе AI</li>
-            <li><strong>Прогнозирование трендов</strong>Анализ направления и силы тренда с вероятностной оценкой</li>
-            <li><strong>Торговые сигналы</strong>Точки входа и выхода с указанием уровней стоп-лосса и тейк-профита</li>
-            <li><strong>Мультитаймфрейм анализ</strong>Синхронизация сигналов с нескольких таймфреймов</li>
-            <li><strong>Кастомизация</strong>Гибкие настройки под любую торговую стратегию</li>
-          </ul>
-        </div>
-
-        <div class="content-section">
-          <h2>Как это работает</h2>
-          <p>Индикаторы устанавливаются непосредственно в платформу TradingView через редактор Pine Script. После добавления на график, индикатор начинает анализировать рыночные данные в реальном времени, отображая визуальные подсказки и сигналы прямо на графике.</p>
-          <p>Благодаря использованию AI, индикаторы адаптируются к текущим рыночным условиям и не требуют постоянной перенастройки.</p>
+        <div class="page-hero-gif">
+          <!--
+          НУЖНО СОЗДАТЬ: Скриншот TradingView графика BTC/USDT с индикаторами, сигналами входа (зелёные стрелки),
+          уровнями стоп-лосс и тейк-профит, фиолетовыми зонами. 1200x700px
+          Сохранить в: assets/demo-indicators.gif
+          -->
+          <div class="gif-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+            <span>Превью индикаторов · 1200×700px</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ============================================================ -->
+    <!-- 2. Возможности -->
+    <!-- ============================================================ -->
+    <section class="page-section">
+      <div class="container">
+        <header class="section-header center">
+          <span class="section-badge">Возможности</span>
+          <h2 class="section-title">Ключевые <span class="text-gradient">функции</span></h2>
+          <p class="section-subtitle">Что умеют наши AI-индикаторы</p>
+        </header>
+        <div class="features-icon-grid two-col">
+
+          <div class="feature-icon-card fade-in">
+            <div class="ficon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <div>
+              <h4>AI-анализ паттернов</h4>
+              <p>Автоматическое распознавание свечных и графических паттернов с высокой точностью.</p>
+            </div>
+          </div>
+
+          <div class="feature-icon-card fade-in">
+            <div class="ficon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="3" x2="21" y2="21"/><line x1="3" y1="21" x2="21" y2="3"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Уровни поддержки/сопротивления</h4>
+              <p>Динамическое построение ключевых уровней на основе ML-моделей.</p>
+            </div>
+          </div>
+
+          <div class="feature-icon-card fade-in">
+            <div class="ficon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Прогнозирование трендов</h4>
+              <p>Анализ направления и силы тренда с вероятностной оценкой движения цены.</p>
+            </div>
+          </div>
+
+          <div class="feature-icon-card fade-in">
+            <div class="ficon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Торговые сигналы</h4>
+              <p>Точки входа и выхода с указанием уровней стоп-лосса и тейк-профита.</p>
+            </div>
+          </div>
+
+          <div class="feature-icon-card fade-in">
+            <div class="ficon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Мультитаймфрейм анализ</h4>
+              <p>Синхронизация сигналов с нескольких таймфреймов для фильтрации ложных входов.</p>
+            </div>
+          </div>
+
+          <div class="feature-icon-card fade-in">
+            <div class="ficon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Кастомизация</h4>
+              <p>Гибкие настройки под любую торговую стратегию и стиль управления капиталом.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 3. Как установить — 3 шага -->
+    <!-- ============================================================ -->
+    <section class="page-section">
+      <div class="container">
+        <header class="section-header center">
+          <span class="section-badge">Установка</span>
+          <h2 class="section-title">Как установить <span class="text-gradient">индикаторы</span></h2>
+          <p class="section-subtitle">Всего 3 простых шага</p>
+        </header>
+        <div class="steps-mini">
+          <div class="step-mini-card fade-in">
+            <div class="step-mini-num">1</div>
+            <h4>Откройте TradingView</h4>
+            <p>Зайдите в свой аккаунт на TradingView и откройте график любого инструмента.</p>
+          </div>
+          <div class="step-mini-card fade-in">
+            <div class="step-mini-num">2</div>
+            <h4>Скопируйте код</h4>
+            <p>Вставьте код индикатора в редактор Pine Script (Pine Editor v5).</p>
+          </div>
+          <div class="step-mini-card fade-in">
+            <div class="step-mini-num">3</div>
+            <h4>Добавьте на график</h4>
+            <p>Нажмите «Добавить на график» — индикатор начнёт анализ в реальном времени.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 4. Скриншот -->
+    <!-- ============================================================ -->
+    <section class="page-section">
+      <div class="container">
+        <header class="section-header center">
+          <span class="section-badge">Демо</span>
+          <h2 class="section-title">Как это <span class="text-gradient">выглядит</span></h2>
+          <p class="section-subtitle">Пример работы индикатора на графике BTC/USDT</p>
+        </header>
+        <div class="screenshot-block">
+          <div class="screenshot-glow"></div>
+          <div class="screenshot-inner">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <p>Скриншот графика BTC/USDT с AI-индикаторами, сигналами входа, уровнями стоп-лосс и тейк-профит</p>
+            <!--
+            НУЖНО СОЗДАТЬ: Скриншот TradingView графика BTC/USDT с индикаторами, сигналами входа (зелёные стрелки),
+            уровнями стоп-лосс и тейк-профит, фиолетовыми зонами. 1200x700px
+            Сохранить в: assets/images/indicators-screenshot.png
+            -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 5. CTA -->
+    <!-- ============================================================ -->
     <section class="cta">
       <div class="container">
         <h2>Готовы протестировать индикаторы?</h2>
@@ -104,6 +245,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="footer" role="contentinfo">
@@ -112,7 +254,7 @@
         <div class="footer-brand">
           <a href="../" class="logo">
             <span class="logo-icon">NT</span>
-            NewTrade<span>.pro</span>
+            NewTrade<span class="logo-text-accent">.pro</span>
           </a>
           <p>AI-инструменты для профессионального трейдинга. Торгуйте умнее с NewTrade.pro.</p>
         </div>
@@ -127,7 +269,7 @@
         <div>
           <h4>Ресурсы</h4>
           <ul class="footer-links">
-            <li><a href="../blog/">Блог</a></li>
+            <li><a href="../#faq">FAQ</a></li>
           </ul>
         </div>
         <div>

@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=2" />
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
 </head>
 <body>
@@ -42,14 +42,15 @@
     <div class="container">
       <a href="../" class="logo" aria-label="NewTrade.pro на главную">
         <span class="logo-icon">NT</span>
-        NewTrade<span>.pro</span>
+        NewTrade<span class="logo-text-accent">.pro</span>
       </a>
       <nav class="nav" role="navigation" aria-label="Основное меню">
-        <a href="../">Главная</a>
-        <a href="indicators.html">Индикаторы</a>
-        <a href="trading-robot.html" class="active">Торговый робот</a>
-        <a href="copy-trading.html">Копитрейдинг</a>
-        <a href="../blog/">Блог</a>
+        <div class="nav-links">
+          <a href="../">Главная</a>
+          <a href="indicators.html">Индикаторы</a>
+          <a href="trading-robot.html" class="active">Торговый робот</a>
+          <a href="copy-trading.html">Копитрейдинг</a>
+        </div>
       </nav>
       <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -58,41 +59,180 @@
   </header>
 
   <main role="main">
-    <section class="page-header">
+
+    <!-- ============================================================ -->
+    <!-- 1. Hero + GIF -->
+    <!-- ============================================================ -->
+    <section class="page-hero">
       <div class="container">
-        <span class="section-badge">Продукт</span>
-        <h1>Торговый <span class="text-gradient">робот</span></h1>
-        <p>Автоматизированная торговая система на базе машинного обучения. Работает 24/7, анализирует рынок и исполняет сделки без эмоций.</p>
-      </div>
-    </section>
-
-    <section class="page-content">
-      <div class="container">
-        <div class="content-section">
-          <h2>О продукте</h2>
-          <p>Наш торговый робот использует ансамбль ML-моделей для анализа рыночных данных, выявления паттернов и принятия торговых решений. Робот работает полностью автономно, исполняя сделки через API подключение к вашей бирже.</p>
-          <p>Главное преимущество — отсутствие эмоционального фактора в торговле. Робот строго следует стратегии, не поддаваясь страху или жадности.</p>
+        <div class="page-hero-info">
+          <span class="section-badge">Продукт</span>
+          <h1>Торговый <span class="text-gradient">робот</span></h1>
+          <p>Автоматизированная торговая система на базе машинного обучения. Работает 24/7, анализирует рынок и исполняет сделки без эмоций.</p>
+          <a href="../#products" class="btn btn-primary">Все продукты</a>
         </div>
-
-        <div class="content-section">
-          <h2>Ключевые возможности</h2>
-          <ul class="feature-list">
-            <li><strong>ML-модели</strong>Ансамбль моделей машинного обучения для анализа рынка</li>
-            <li><strong>24/7 Автоторговля</strong>Круглосуточная автоматическая торговля без выходных</li>
-            <li><strong>Управление рисками</strong>Встроенные механизмы риск-менеджмента и диверсификации</li>
-            <li><strong>Бэктестинг</strong>Тестирование стратегий на исторических данных</li>
-            <li><strong>Мультивалютность</strong>Одновременная торговля несколькими инструментами</li>
-            <li><strong>Telegram уведомления</strong>Мгновенные оповещения о всех сделках и событиях</li>
-          </ul>
-        </div>
-
-        <div class="content-section">
-          <h2>Поддерживаемые биржи</h2>
-          <p>Робот поддерживает подключение ко всем основным криптовалютным биржам через API: Binance, Bybit, OKX, Kraken и другие. Настройка занимает менее 5 минут — просто укажите API-ключи с ограниченными правами.</p>
+        <div class="page-hero-gif">
+          <!--
+          НУЖНО СОЗДАТЬ: График доходности — линейный chart растущий слева направо, светлый фон, фиолетовая линия. 1200x300px
+          Сохранить в: assets/demo-robot.gif
+          -->
+          <div class="gif-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M15 3v18"/>
+            </svg>
+            <span>Превью робота · 1200×300px</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ============================================================ -->
+    <!-- 2. Возможности робота -->
+    <!-- ============================================================ -->
+    <section class="page-section">
+      <div class="container">
+        <header class="section-header center">
+          <span class="section-badge">Возможности</span>
+          <h2 class="section-title">Что умеет <span class="text-gradient">робот</span></h2>
+          <p class="section-subtitle">Полная автоматизация торговли с ML-моделями</p>
+        </header>
+        <div class="features-icon-grid">
+
+          <div class="feature-icon-card fade-in">
+            <div class="ficon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
+              </svg>
+            </div>
+            <div>
+              <h4>ML-модели</h4>
+              <p>Ансамбль моделей машинного обучения для анализа рынка и прогнозирования движения цены.</p>
+            </div>
+          </div>
+
+          <div class="feature-icon-card fade-in">
+            <div class="ficon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div>
+              <h4>24/7 Автоторговля</h4>
+              <p>Круглосуточная автоматическая торговля без выходных и праздников. Ни одной упущенной возможности.</p>
+            </div>
+          </div>
+
+          <div class="feature-icon-card fade-in">
+            <div class="ficon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Управление рисками</h4>
+              <p>Встроенные механизмы риск-менеджмента, диверсификации и авто-стоп при просадке.</p>
+            </div>
+          </div>
+
+          <div class="feature-icon-card fade-in">
+            <div class="ficon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Бэктестинг</h4>
+              <p>Тестирование стратегий на исторических данных за несколько лет. Все показатели наглядно.</p>
+            </div>
+          </div>
+
+          <div class="feature-icon-card fade-in">
+            <div class="ficon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Мультивалютность</h4>
+              <p>Одновременная торговля несколькими инструментами и парами. Распределение капитала.</p>
+            </div>
+          </div>
+
+          <div class="feature-icon-card fade-in">
+            <div class="ficon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Telegram уведомления</h4>
+              <p>Мгновенные оповещения о всех открытых и закрытых сделках прямо в Telegram.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 3. Поддерживаемые биржи -->
+    <!-- ============================================================ -->
+    <section class="page-section">
+      <div class="container">
+        <header class="section-header center">
+          <span class="section-badge">Биржи</span>
+          <h2 class="section-title">Поддерживаемые <span class="text-gradient">биржи</span></h2>
+          <p class="section-subtitle">Робот подключается через API к ведущим криптобиржам</p>
+        </header>
+        <div class="exchange-grid">
+          <div class="exchange-card fade-in">
+            <div class="ex-icon">BNB</div>
+            <h4>Binance</h4>
+            <p>Крупнейшая криптобиржа по объёму торгов. Высокая ликвидность и широкий выбор пар.</p>
+          </div>
+          <div class="exchange-card fade-in">
+            <div class="ex-icon">BYB</div>
+            <h4>Bybit</h4>
+            <p>Популярная платформа для деривативов и спотовой торговли с низкими комиссиями.</p>
+          </div>
+          <div class="exchange-card fade-in">
+            <div class="ex-icon">OKX</div>
+            <h4>OKX</h4>
+            <p>Глобальная биржа с продвинутыми trading tools и высоким уровнем безопасности.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 4. Скриншот -->
+    <!-- ============================================================ -->
+    <section class="page-section">
+      <div class="container">
+        <header class="section-header center">
+          <span class="section-badge">Демо</span>
+          <h2 class="section-title">График <span class="text-gradient">доходности</span></h2>
+          <p class="section-subtitle">Пример работы робота с начала 2025 года</p>
+        </header>
+        <div class="screenshot-block">
+          <div class="screenshot-glow"></div>
+          <div class="screenshot-inner">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+            </svg>
+            <p>График доходности — линейный chart, растущий слева направо, светлый фон, фиолетовая линия</p>
+            <!--
+            НУЖНО СОЗДАТЬ: График доходности — линейный chart растущий слева направо, светлый фон, фиолетовая линия. 1200x300px
+            Сохранить в: assets/images/robot-screenshot.png
+            -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 5. CTA -->
+    <!-- ============================================================ -->
     <section class="cta">
       <div class="container">
         <h2>Автоматизируйте свою торговлю</h2>
@@ -103,6 +243,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="footer" role="contentinfo">
@@ -111,7 +252,7 @@
         <div class="footer-brand">
           <a href="../" class="logo">
             <span class="logo-icon">NT</span>
-            NewTrade<span>.pro</span>
+            NewTrade<span class="logo-text-accent">.pro</span>
           </a>
           <p>AI-инструменты для профессионального трейдинга. Торгуйте умнее с NewTrade.pro.</p>
         </div>
@@ -126,7 +267,7 @@
         <div>
           <h4>Ресурсы</h4>
           <ul class="footer-links">
-            <li><a href="../blog/">Блог</a></li>
+            <li><a href="../#faq">FAQ</a></li>
           </ul>
         </div>
         <div>
