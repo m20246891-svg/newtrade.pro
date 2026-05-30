@@ -551,22 +551,20 @@
   <script src="assets/js/main.js"></script>
 
   <!-- Cookie banner -->
-  <div class="cookie-banner" id="cookieBanner">
-    <div class="container">
-      <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с нашей <a href="legal/privacy.html">Политикой конфиденциальности</a>.</p>
-      <button class="cookie-btn" id="cookieAccept">Принять</button>
-    </div>
+  <div class="cookie-banner" id="cookie-banner">
+    <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с нашей <a href="legal/privacy.html">Политикой конфиденциальности</a>.</p>
+    <button class="cookie-btn" id="cookieAccept">Принять</button>
   </div>
 
   <script>
   (function() {
-    if (localStorage.getItem('cookieConsent') === 'accepted') return;
-    var banner = document.getElementById('cookieBanner');
+    if (localStorage.getItem('cookieAccepted') === 'true') return;
+    var banner = document.getElementById('cookie-banner');
     var btn = document.getElementById('cookieAccept');
     if (!banner || !btn) return;
     setTimeout(function() { banner.classList.add('show'); }, 500);
     btn.addEventListener('click', function() {
-      localStorage.setItem('cookieConsent', 'accepted');
+      localStorage.setItem('cookieAccepted', 'true');
       banner.classList.remove('show');
       setTimeout(function() { banner.style.display = 'none'; }, 400);
     });

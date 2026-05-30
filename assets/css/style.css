@@ -1971,63 +1971,62 @@ h1, h2, h3, h4, h5, h6 {
 
 .cookie-banner {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--color-bg-card);
-  border-top: 1px solid var(--color-border);
-  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08);
-  z-index: 9999;
-  padding: 20px 40px;
-  transform: translateY(100%);
-  opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.cookie-banner.show {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.cookie-banner .container {
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 20px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
+  z-index: 9999;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+  to { transform: translateX(-50%) translateY(0); opacity: 1; }
 }
 
 .cookie-banner p {
-  font-size: 0.88rem;
+  font-size: 14px;
   line-height: 1.6;
-  color: var(--color-text-secondary);
-  max-width: 720px;
+  color: #6B7280;
 }
 
 .cookie-banner p a {
-  color: var(--color-accent);
+  color: #7C3AED;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .cookie-btn {
   flex-shrink: 0;
-  padding: 10px 24px;
-  font: 600 0.88rem / 1.4 var(--font-main);
+  background: linear-gradient(135deg, #7C3AED, #A855F7);
   color: #fff;
-  background: var(--gradient-accent);
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  transition: all var(--transition);
+  white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
 .cookie-btn:hover {
   transform: translateY(-1px);
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
 }
 
 @media (max-width: 640px) {
-  .cookie-banner .container {
+  .cookie-banner {
     flex-direction: column;
     text-align: center;
   }
