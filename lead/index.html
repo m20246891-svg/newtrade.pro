@@ -326,12 +326,74 @@
   }
 
   /* Captcha */
-  .form-wrapper .g-recaptcha,
-  .form-wrapper [id*="recap"] {
-    margin: 12px 0;
-    border-radius: 8px;
-    overflow: hidden;
+  .recaptcha {
+    margin-top: 16px;
+    padding: 16px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.12);
   }
+
+  #captchaParent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #captchaDiv {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    min-height: 74px;
+    align-items: center;
+  }
+
+  #captchaDiv img {
+    border-radius: 4px;
+    max-width: 100%;
+  }
+
+  #relCaptcha {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    align-self: flex-end;
+    margin-bottom: -4px;
+    opacity: 0.7;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  #relCaptcha:hover {
+    opacity: 1;
+    transform: rotate(60deg);
+  }
+
+  #captchaText {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    box-sizing: border-box;
+  }
+
+  #captchaText::placeholder {
+    color: rgba(255,255,255,0.45);
+  }
+
+  #captchaText:focus {
+    border-color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.18);
+  }
+
+  #capRequired { display: none; }
 
   /* Success message */
   #Zc_SignupSuccess {
