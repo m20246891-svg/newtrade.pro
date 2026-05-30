@@ -1,25 +1,27 @@
 /**
  * NewTrade.pro — Main Script
- * Lightweight vanilla JS for navigation, animations, and interactivity.
+ * Lightweight vanilla JS for navigation, FAQ accordion, animations, and interactivity.
  */
 
 document.addEventListener('DOMContentLoaded', function () {
   initMobileMenu();
   initScrollAnimations();
-  initActiveNav();
+  initFaqAccordion();
+  initSmoothScroll();
+  initHeaderScroll();
 });
 
 /**
  * Mobile menu toggle
  */
 function initMobileMenu() {
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav');
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.querySelector('.nav');
 
   if (!toggle || !nav) return;
 
   toggle.addEventListener('click', function () {
-    const isOpen = nav.classList.toggle('open');
+    var isOpen = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', isOpen);
   });
 
@@ -41,12 +43,85 @@ function initMobileMenu() {
 }
 
 /**
+ * FAQ Accordion
+ */
+function initFaqAccordion() {
+  var items = document.querySelectorAll('.faq-item');
+
+  if (!items.length) return;
+
+  items.forEach(function (item) {
+    var question = item.querySelector('.faq-question');
+    if (!question) return;
+
+    question.addEventListener('click', function () {
+      var isActive = item.classList.contains('active');
+
+      // Close all items
+      items.forEach(function (other) {
+        other.classList.remove('active');
+        var btn = other.querySelector('.faq-question');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle clicked item
+      if (!isActive) {
+        item.classList.add('active');
+        question.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
+
+/**
+ * Smooth scroll for anchor links
+ */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+
+      var target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        var headerOffset = 90;
+        var elementPosition = target.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+}
+
+/**
+ * Add scrolled class to header on scroll
+ */
+function initHeaderScroll() {
+  var header = document.querySelector('.header');
+  if (!header) return;
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+}
+
+/**
  * Scroll-triggered fade-in animations using IntersectionObserver
  */
 function initScrollAnimations() {
   var elements = document.querySelectorAll('.fade-in');
 
   if (!elements.length) return;
+
   if (!('IntersectionObserver' in window)) {
     elements.forEach(function (el) { el.classList.add('visible'); });
     return;
@@ -65,23 +140,4 @@ function initScrollAnimations() {
   );
 
   elements.forEach(function (el) { observer.observe(el); });
-}
-
-/**
- * Highlight current page in navigation
- */
-function initActiveNav() {
-  var currentPath = window.location.pathname.replace(/\/$/, '');
-  var navLinks = document.querySelectorAll('.nav a');
-
-  navLinks.forEach(function (link) {
-    link.classList.remove('active');
-    var linkPath = link.getAttribute('href').replace(/\/$/, '');
-
-    if (linkPath === currentPath) {
-      link.classList.add('active');
-    } else if (currentPath === '' && linkPath === '/') {
-      link.classList.add('active');
-    }
-  });
 }

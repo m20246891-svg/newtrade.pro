@@ -66,14 +66,16 @@
     <div class="container">
       <a href="/" class="logo" aria-label="NewTrade.pro на главную">
         <span class="logo-icon">NT</span>
-        NewTrade<span>.pro</span>
+        NewTrade<span class="logo-text-accent">.pro</span>
       </a>
       <nav class="nav" role="navigation" aria-label="Основное меню">
-        <a href="/" class="active">Главная</a>
-        <a href="products/indicators.html">Индикаторы</a>
-        <a href="products/trading-robot.html">Торговый робот</a>
-        <a href="products/copy-trading.html">Копитрейдинг</a>
-        <a href="blog/">Блог</a>
+        <div class="nav-links">
+          <a href="/" class="active">Главная</a>
+          <a href="#for-whom">Для кого</a>
+          <a href="#products">Продукты</a>
+          <a href="#how-it-works">Как работает</a>
+          <a href="#faq">FAQ</a>
+        </div>
       </nav>
       <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -82,21 +84,45 @@
   </header>
 
   <main role="main">
-    <!-- Hero -->
+
+    <!-- ============================================================ -->
+    <!-- 1. Hero -->
+    <!-- ============================================================ -->
     <section class="hero" aria-label="Главный баннер">
       <div class="container">
         <div class="hero-content">
           <span class="section-badge">AI — Трейдинг</span>
-          <h1>Торгуй умнее <br />с <span class="text-gradient">AI-инструментами</span></h1>
-          <p>NewTrade.pro — профессиональные решения для трейдеров: индикаторы TradingView, торговые роботы и копитрейдинг на базе искусственного интеллекта.</p>
+          <h1>Торгуй умнее<br />с <span class="text-gradient">искусственным интеллектом</span></h1>
+          <p>NewTrade.pro — профессиональные решения для трейдеров: индикаторы TradingView, торговые роботы и копитрейдинг на базе AI. Автоматизируй свою торговлю.</p>
           <div class="hero-actions">
-            <a href="products/indicators.html" class="btn btn-primary btn-lg">Начать торговать</a>
-            <a href="#products" class="btn btn-secondary btn-lg">Все продукты</a>
+            <a href="#products" class="btn btn-primary btn-lg">Начать торговать</a>
+            <a href="#how-it-works" class="btn btn-secondary btn-lg">Как это работает</a>
           </div>
         </div>
+
+        <!-- Ticker / Бегущая строка рынков -->
+        <div class="ticker-wrap">
+          <div class="ticker-track" aria-hidden="true">
+            <span class="ticker-item"><span class="ticker-dot green"></span>BTC/USD <span style="color:var(--color-green);margin-left:4px;">▲ +2.34%</span></span>
+            <span class="ticker-item"><span class="ticker-dot blue"></span>ETH/USD <span style="color:var(--color-green);margin-left:4px;">▲ +1.87%</span></span>
+            <span class="ticker-item"><span class="ticker-dot purple"></span>EUR/USD <span style="color:var(--color-red);margin-left:4px;">▼ -0.42%</span></span>
+            <span class="ticker-item"><span class="ticker-dot green"></span>S&amp;P 500 <span style="color:var(--color-green);margin-left:4px;">▲ +0.91%</span></span>
+            <span class="ticker-item"><span class="ticker-dot blue"></span>GOLD <span style="color:var(--color-green);margin-left:4px;">▲ +0.56%</span></span>
+            <span class="ticker-item"><span class="ticker-dot purple"></span>NASDAQ <span style="color:var(--color-green);margin-left:4px;">▲ +1.12%</span></span>
+            <!-- дубликат для бесконечной прокрутки -->
+            <span class="ticker-item"><span class="ticker-dot green"></span>BTC/USD <span style="color:var(--color-green);margin-left:4px;">▲ +2.34%</span></span>
+            <span class="ticker-item"><span class="ticker-dot blue"></span>ETH/USD <span style="color:var(--color-green);margin-left:4px;">▲ +1.87%</span></span>
+            <span class="ticker-item"><span class="ticker-dot purple"></span>EUR/USD <span style="color:var(--color-red);margin-left:4px;">▼ -0.42%</span></span>
+            <span class="ticker-item"><span class="ticker-dot green"></span>S&amp;P 500 <span style="color:var(--color-green);margin-left:4px;">▲ +0.91%</span></span>
+            <span class="ticker-item"><span class="ticker-dot blue"></span>GOLD <span style="color:var(--color-green);margin-left:4px;">▲ +0.56%</span></span>
+            <span class="ticker-item"><span class="ticker-dot purple"></span>NASDAQ <span style="color:var(--color-green);margin-left:4px;">▲ +1.12%</span></span>
+          </div>
+        </div>
+
+        <!-- Статистика -->
         <div class="hero-stats">
           <div class="stat-item">
-            <div class="stat-number gold">3+</div>
+            <div class="stat-number accent">3+</div>
             <div class="stat-label">Года разработки</div>
           </div>
           <div class="stat-item">
@@ -104,159 +130,334 @@
             <div class="stat-label">Трейдеров используют</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number gold">97%</div>
-            <div class="stat-label">Качество сигналов</div>
+            <div class="stat-number accent">97%</div>
+            <div class="stat-label">Точность сигналов</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Products -->
+    <!-- ============================================================ -->
+    <!-- 2. Для кого -->
+    <!-- ============================================================ -->
+    <section class="for-whom" id="for-whom" aria-label="Для кого">
+      <div class="container">
+        <header class="section-header center">
+          <span class="section-badge">Для кого</span>
+          <h2 class="section-title">Кому подходят наши <span class="text-gradient">инструменты</span></h2>
+          <p class="section-subtitle">Решения для любого уровня подготовки — от новичка до профессионала</p>
+        </header>
+        <div class="for-whom-grid">
+          <div class="whom-card fade-in">
+            <div class="whom-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Начинающие трейдеры</h3>
+            <p>Готовые стратегии и сигналы. Не нужно глубоких знаний — просто следуй подсказкам AI.</p>
+          </div>
+          <div class="whom-card fade-in">
+            <div class="whom-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <h3>Опытные трейдеры</h3>
+            <p>Расширь арсенал AI-индикаторами и автоматизируй стратегии с помощью торгового робота.</p>
+          </div>
+          <div class="whom-card fade-in">
+            <div class="whom-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Инвесторы</h3>
+            <p>Копитрейдинг позволит зарабатывать вместе с профессиональными трейдерами без активного участия.</p>
+          </div>
+          <div class="whom-card fade-in">
+            <div class="whom-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Разработчики</h3>
+            <p>Открытые API для интеграции. Создавай собственные стратегии на базе нашей инфраструктуры.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 3. Продукты -->
+    <!-- ============================================================ -->
     <section class="products" id="products" aria-label="Продукты">
       <div class="container">
         <header class="section-header center">
           <span class="section-badge">Продукты</span>
-          <h2 class="section-title">Наши решения</h2>
+          <h2 class="section-title">Решения для <span class="text-gradient">профессиональной торговли</span></h2>
           <p class="section-subtitle">Выберите инструмент, который соответствует вашему стилю торговли</p>
         </header>
         <div class="products-grid">
+
+          <!-- Индикаторы -->
           <article class="product-card fade-in">
-            <div class="product-icon gold">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <div class="product-card-gif">
+              <!--
+              НУЖНО СОЗДАТЬ: Скриншот TradingView графика BTC/USDT с индикаторами, сигналами входа (зелёные стрелки),
+              уровнями стоп-лосс и тейк-профит, фиолетовыми зонами. 1200x700px
+              Сохранить в: assets/demo-indicators.gif
+              -->
+              <div class="gif-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                <span>Превью индикаторов</span>
+              </div>
             </div>
-            <h3>Индикаторы TradingView</h3>
-            <p>Профессиональные индикаторы с AI-анализом рыночных паттернов, уровней поддержки/сопротивления и прогнозирования трендов.</p>
-            <div class="product-tags">
-              <span class="product-tag">Pine Script</span>
-              <span class="product-tag">AI анализ</span>
-              <span class="product-tag">Real-time</span>
+            <div class="product-card-body">
+              <div class="product-tags">
+                <span class="product-tag">Pine Script</span>
+                <span class="product-tag">AI анализ</span>
+                <span class="product-tag">Real-time</span>
+              </div>
+              <h3>Индикаторы TradingView</h3>
+              <p>Профессиональные индикаторы с AI-анализом рыночных паттернов, уровней поддержки/сопротивления и прогнозирования трендов.</p>
+              <a href="products/indicators.html" class="product-link">Подробнее <span class="arrow">→</span></a>
             </div>
-            <a href="products/indicators.html" class="product-link">Подробнее <span class="arrow">→</span></a>
           </article>
 
+          <!-- Торговый робот -->
           <article class="product-card fade-in">
-            <div class="product-icon blue">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M15 3v18"/></svg>
+            <div class="product-card-gif">
+              <!--
+              НУЖНО СОЗДАТЬ: График доходности — линейный chart растущий слева направо, светлый фон, фиолетовая линия. 1200x300px
+              Сохранить в: assets/demo-robot.gif
+              -->
+              <div class="gif-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M15 3v18"/></svg>
+                <span>Превью робота</span>
+              </div>
             </div>
-            <h3>Торговый робот</h3>
-            <p>Автоматизированный торговый робот с ML-моделями для анализа рынка и исполнения сделок 24/7 без эмоций.</p>
-            <div class="product-tags">
-              <span class="product-tag">Machine Learning</span>
-              <span class="product-tag">24/7</span>
-              <span class="product-tag">Автоматизация</span>
+            <div class="product-card-body">
+              <div class="product-tags">
+                <span class="product-tag">Machine Learning</span>
+                <span class="product-tag">24/7</span>
+                <span class="product-tag">Автоматизация</span>
+              </div>
+              <h3>Торговый робот</h3>
+              <p>Автоматизированная торговая система с ML-моделями. Анализирует рынок и исполняет сделки 24/7 без эмоций.</p>
+              <a href="products/trading-robot.html" class="product-link">Подробнее <span class="arrow">→</span></a>
             </div>
-            <a href="products/trading-robot.html" class="product-link">Подробнее <span class="arrow">→</span></a>
           </article>
 
+          <!-- Копитрейдинг -->
           <article class="product-card fade-in">
-            <div class="product-icon green">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <div class="product-card-gif">
+              <!--
+              НУЖНО СОЗДАТЬ: Инфографика 3 шагов — График с сигналом → Уведомление на телефоне → Открытая сделка. 1200x400px
+              Сохранить в: assets/demo-copytrade.gif
+              -->
+              <div class="gif-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Превью копитрейдинга</span>
+              </div>
             </div>
-            <h3>Копитрейдинг</h3>
-            <p>Автоматическое копирование сделок успешных трейдеров. Зарабатывай вместе с профессионалами рынка.</p>
-            <div class="product-tags">
-              <span class="product-tag">Social Trading</span>
-              <span class="product-tag">Автокопирование</span>
-              <span class="product-tag">Рейтинг</span>
+            <div class="product-card-body">
+              <div class="product-tags">
+                <span class="product-tag">Social Trading</span>
+                <span class="product-tag">Автокопирование</span>
+                <span class="product-tag">Рейтинг</span>
+              </div>
+              <h3>Копитрейдинг</h3>
+              <p>Автоматическое копирование сделок успешных трейдеров. Прозрачная статистика и полный контроль над рисками.</p>
+              <a href="products/copy-trading.html" class="product-link">Подробнее <span class="arrow">→</span></a>
             </div>
-            <a href="products/copy-trading.html" class="product-link">Подробнее <span class="arrow">→</span></a>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- Features -->
-    <section class="features" aria-label="Преимущества">
+    <!-- ============================================================ -->
+    <!-- 4. Как это работает -->
+    <!-- ============================================================ -->
+    <section class="how-it-works" id="how-it-works" aria-label="Как это работает">
       <div class="container">
         <header class="section-header center">
-          <span class="section-badge">Почему мы</span>
-          <h2 class="section-title">Преимущества NewTrade.pro</h2>
-          <p class="section-subtitle">Технологии, которые дают преимущество на рынке</p>
+          <span class="section-badge">Как работает</span>
+          <h2 class="section-title">Всего <span class="text-gradient">3 шага</span> до результата</h2>
+          <p class="section-subtitle">Простая настройка и понятный интерфейс для быстрого старта</p>
         </header>
-        <div class="features-grid">
-          <div class="feature-item fade-in">
-            <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <div class="steps-grid">
+          <div class="step-card fade-in">
+            <div class="step-number">01</div>
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-            <h3>AI Аналитика</h3>
-            <p>Нейросети анализируют рыночные паттерны и предоставляют точные торговые сигналы в реальном времени.</p>
+            <h3>Выберите продукт</h3>
+            <p>Индикаторы, торговый робот или копитрейдинг — подберите решение под свои задачи.</p>
           </div>
-          <div class="feature-item fade-in">
-            <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <div class="step-card fade-in">
+            <div class="step-number">02</div>
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
-            <h3>Безопасность</h3>
-            <p>Ваши данные и средства защищены. Мы используем только проверенные API и шифрование данных.</p>
+            <h3>Настройте под себя</h3>
+            <p>Подключите к бирже через API, настройте параметры риск-менеджмента и стратегии.</p>
           </div>
-          <div class="feature-item fade-in">
-            <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="step-card fade-in">
+            <div class="step-number">03</div>
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <h3>24/7 Работа</h3>
-            <p>Торговые роботы работают круглосуточно, не пропуская ни одной выгодной возможности на рынке.</p>
-          </div>
-          <div class="feature-item fade-in">
-            <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <h3>Проверенные стратегии</h3>
-            <p>Все стратегии проходят бэктестинг на исторических данных перед запуском в реальную торговлю.</p>
-          </div>
-          <div class="feature-item fade-in">
-            <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <h3>Интеграции</h3>
-            <p>Поддержка всех популярных бирж и брокеров. Легкая настройка через API-ключи.</p>
-          </div>
-          <div class="feature-item fade-in">
-            <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </div>
-            <h3>Поддержка</h3>
-            <p>Саппорт отвечает на вопросы в течение 24 часов. Помогаем с настройкой и оптимизацией.</p>
+            <h3>Получайте прибыль</h3>
+            <p>AI-инструменты работают автоматически. Следите за статистикой и получайте доход.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="about" aria-label="О нас">
+    <!-- ============================================================ -->
+    <!-- 5. Отзывы -->
+    <!-- ============================================================ -->
+    <section class="reviews" id="reviews" aria-label="Отзывы">
       <div class="container">
-        <div class="about-content">
-          <span class="section-badge">О проекте</span>
-          <h2 class="section-title">Что такое NewTrade.pro?</h2>
-          <p>NewTrade.pro — это платформа AI-инструментов для трейдинга, созданная командой профессиональных трейдеров и разработчиков. Мы объединили глубокое понимание финансовых рынков с передовыми технологиями машинного обучения, чтобы дать трейдерам реальное преимущество.</p>
-          <p>Наша миссия — сделать профессиональные торговые инструменты доступными каждому. От начинающих трейдеров до опытных профессионалов — наши решения помогают принимать взвешенные решения и автоматизировать торговлю.</p>
-        </div>
-        <div class="about-grid">
-          <div class="about-card">
-            <h4>🎯 Точность</h4>
-            <p>AI-модели обеспечивают высокую точность прогнозов и торговых сигналов.</p>
+        <header class="section-header center">
+          <span class="section-badge">Отзывы</span>
+          <h2 class="section-title">Что говорят <span class="text-gradient">трейдеры</span></h2>
+          <p class="section-subtitle">Более 500 трейдеров уже используют наши инструменты</p>
+        </header>
+        <div class="reviews-grid">
+
+          <div class="review-card fade-in">
+            <div class="review-stars">
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="review-text">«Использую индикаторы NewTrade.pro уже 6 месяцев. Точность сигналов впечатляет — профит-фактор вырос на 40% по сравнению с моей предыдущей стратегией.»</p>
+            <div class="review-author">
+              <div class="review-avatar">АК</div>
+              <div>
+                <div class="review-name">Алексей К.</div>
+                <div class="review-role">Трейдер, 5 лет опыта</div>
+              </div>
+            </div>
           </div>
-          <div class="about-card">
-            <h4>⚡ Скорость</h4>
-            <p>Миллисекундная обработка данных и исполнение сделок без задержек.</p>
+
+          <div class="review-card fade-in">
+            <div class="review-stars">
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="review-text">«Торговый робот NewTrade.pro изменил моё представление об автоматической торговле. Настроил за 15 минут, и он стабильно приносит доход. Рекомендую!»</p>
+            <div class="review-author">
+              <div class="review-avatar">ДМ</div>
+              <div>
+                <div class="review-name">Дмитрий М.</div>
+                <div class="review-role">Криптоинвестор</div>
+              </div>
+            </div>
           </div>
-          <div class="about-card">
-            <h4>📊 Аналитика</h4>
-            <p>Детальная статистика и отчёты по всем торговым операциям.</p>
+
+          <div class="review-card fade-in">
+            <div class="review-stars">
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="review-text">«Копитрейдинг — это открытие для меня. Я не трачу время на анализ графиков, просто копирую сделки топ-трейдеров и получаю стабильный доход. Всё прозрачно.»</p>
+            <div class="review-author">
+              <div class="review-avatar">ЕС</div>
+              <div>
+                <div class="review-name">Елена С.</div>
+                <div class="review-role">Начинающий трейдер</div>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- ============================================================ -->
+    <!-- 6. FAQ -->
+    <!-- ============================================================ -->
+    <section class="faq" id="faq" aria-label="Часто задаваемые вопросы">
+      <div class="container">
+        <header class="section-header center">
+          <span class="section-badge">FAQ</span>
+          <h2 class="section-title">Ответы на частые <span class="text-gradient">вопросы</span></h2>
+          <p class="section-subtitle">Всё, что нужно знать перед началом работы</p>
+        </header>
+        <div class="faq-list">
+
+          <div class="faq-item active">
+            <button class="faq-question" aria-expanded="true">
+              <span>Что нужно для начала работы с индикаторами?</span>
+              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Достаточно иметь аккаунт на TradingView. Индикаторы устанавливаются через редактор Pine Script — копируете код и добавляете на график. Никакого дополнительного ПО не требуется.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Как подключить торгового робота к бирже?</span>
+              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Робот подключается через API-ключи вашей биржи. Создайте API-ключ с ограниченными правами (только торговля, без вывода средств) и укажите его в настройках робота. Процесс занимает менее 5 минут.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Какие риски в копитрейдинге?</span>
+              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Как и любая торговля, копитрейдинг несёт риски. Мы минимизируем их с помощью прозрачной статистики трейдеров, рейтинга и встроенных механизмов риск-менеджмента. Вы можете установить лимиты на копирование и остановить его в любой момент.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>С какими биржами работают ваши инструменты?</span>
+              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Мы поддерживаем Binance, Bybit, OKX, Kraken, Coinbase и другие популярные биржи. Если вашей биржи нет в списке — свяжитесь с нами, мы рассмотрим возможность интеграции.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Есть ли поддержка для начинающих?</span>
+              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Да! Мы предоставляем подробные гайды по настройке и использованию каждого продукта. Также вы можете задать вопросы по email — мы отвечаем в течение 24 часов.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 7. CTA -->
+    <!-- ============================================================ -->
     <section class="cta" aria-label="Призыв к действию">
       <div class="container">
         <h2>Готовы вывести торговлю на новый уровень?</h2>
         <p>Присоединяйтесь к сообществу трейдеров, которые уже используют AI-инструменты NewTrade.pro</p>
         <div class="cta-actions">
-          <a href="products/indicators.html" class="btn btn-primary btn-lg">Выбрать продукт</a>
-          <a href="blog/" class="btn btn-secondary btn-lg">Читать блог</a>
+          <a href="#products" class="btn btn-primary btn-lg">Выбрать продукт</a>
+          <a href="mailto:maxai3743@gmail.com" class="btn btn-secondary btn-lg">Связаться с нами</a>
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- Footer -->
@@ -266,7 +467,7 @@
         <div class="footer-brand">
           <a href="/" class="logo">
             <span class="logo-icon">NT</span>
-            NewTrade<span>.pro</span>
+            NewTrade<span class="logo-text-accent">.pro</span>
           </a>
           <p>AI-инструменты для профессионального трейдинга. Торгуйте умнее с NewTrade.pro.</p>
         </div>
@@ -281,8 +482,7 @@
         <div>
           <h4>Ресурсы</h4>
           <ul class="footer-links">
-            <li><a href="blog/">Блог</a></li>
-            <li><a href="/#about">О проекте</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
         <div>
