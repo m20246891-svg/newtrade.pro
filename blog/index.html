@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=2" />
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
 </head>
 <body>
@@ -42,14 +42,16 @@
     <div class="container">
       <a href="../" class="logo" aria-label="NewTrade.pro на главную">
         <span class="logo-icon">NT</span>
-        NewTrade<span>.pro</span>
+        NewTrade<span class="logo-text-accent">.pro</span>
       </a>
       <nav class="nav" role="navigation" aria-label="Основное меню">
-        <a href="../">Главная</a>
-        <a href="../products/indicators.html">Индикаторы</a>
-        <a href="../products/trading-robot.html">Торговый робот</a>
-        <a href="../products/copy-trading.html">Копитрейдинг</a>
-        <a href="./" class="active">Блог</a>
+        <div class="nav-links">
+          <a href="../">Главная</a>
+          <a href="../products/indicators.html">Индикаторы</a>
+          <a href="../products/trading-robot.html">Торговый робот</a>
+          <a href="../products/copy-trading.html">Копитрейдинг</a>
+          <a href="./" class="active">Блог</a>
+        </div>
       </nav>
       <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -58,7 +60,7 @@
   </header>
 
   <main role="main">
-    <section class="page-header">
+    <section class="page-hero">
       <div class="container">
         <span class="section-badge">Блог</span>
         <h1>Блог о <span class="text-gradient">трейдинге</span></h1>
@@ -66,7 +68,7 @@
       </div>
     </section>
 
-    <section class="page-content">
+    <section class="page-section">
       <div class="container">
         <div class="blog-grid">
           <article class="blog-card fade-in">
@@ -133,7 +135,7 @@
         <div class="footer-brand">
           <a href="../" class="logo">
             <span class="logo-icon">NT</span>
-            NewTrade<span>.pro</span>
+            NewTrade<span class="logo-text-accent">.pro</span>
           </a>
           <p>AI-инструменты для профессионального трейдинга. Торгуйте умнее с NewTrade.pro.</p>
         </div>
