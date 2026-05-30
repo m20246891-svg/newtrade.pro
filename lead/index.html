@@ -5,7 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Лид-магнит — NewTrade.pro</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
+<script>
+  window.onRecaptchaLoad = function() {
+    var recapDiv = document.getElementById('recapDiv');
+    var siteKey = document.getElementById('secretid');
+    if (recapDiv && siteKey && siteKey.value) {
+      try { grecaptcha.render(recapDiv, { sitekey: siteKey.value }); } catch(e) {}
+    }
+  };
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" defer></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -633,14 +642,6 @@
 
 <script type='text/JavaScript' id="cmpSFMinJs" src='https://static.zohocdn.com/campaign/static8/js/optin.min.7d194fa014886f5ee8a9141a6f1d6a6d.js' onload="setupSF('sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4','ZCFORMVIEW',false)"></script>
 <script>
-  function onRecaptchaLoad() {
-    var recapDiv = document.getElementById('recapDiv');
-    var siteKey = document.getElementById('secretid');
-    if (recapDiv && siteKey && siteKey.value) {
-      grecaptcha.render(recapDiv, { sitekey: siteKey.value });
-    }
-  }
-
   setInterval(function() {
     var el = document.querySelector('input[name="CONTACT_EMAIL"]');
     if (el && !el.hasAttribute('placeholder')) {
