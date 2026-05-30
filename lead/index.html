@@ -653,6 +653,19 @@
       }, 1500);
     }
   }, 300);
+
+  document.querySelector('.form-wrapper').addEventListener('click', function(e) {
+    if (e.target.id !== 'zcWebOptin') return;
+    var response = grecaptcha.getResponse();
+    if (!response) {
+      e.stopPropagation();
+      var email = document.querySelector('input[name="CONTACT_EMAIL"]');
+      if (email) email.classList.add('field-error');
+      setTimeout(function() {
+        if (email) email.classList.remove('field-error');
+      }, 1200);
+    }
+  }, true);
 </script>
 
 </body>
