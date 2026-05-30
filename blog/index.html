@@ -60,73 +60,198 @@
   </header>
 
   <main role="main">
+
+    <!-- ============================================================ -->
+    <!-- 1. Hero -->
+    <!-- ============================================================ -->
     <section class="page-hero">
       <div class="container">
-        <span class="section-badge">Блог</span>
-        <h1>Блог о <span class="text-gradient">трейдинге</span></h1>
-        <p>Полезные статьи, гайды и аналитика по трейдингу, AI-инструментам и автоматизации торговли.</p>
-      </div>
-    </section>
-
-    <section class="page-section">
-      <div class="container">
-        <div class="blog-grid">
-          <article class="blog-card fade-in">
-            <div class="blog-card-body">
-              <div class="blog-date">Скоро</div>
-              <h3>AI в трейдинге: как машинное обучение меняет рынки</h3>
-              <p>Обзор современных AI-технологий в трейдинге и их влияния на финансовые рынки.</p>
-              <a href="#" class="product-link" onclick="return false;">Читать <span class="arrow">→</span></a>
-            </div>
-          </article>
-
-          <article class="blog-card fade-in">
-            <div class="blog-card-body">
-              <div class="blog-date">Скоро</div>
-              <h3>Топ-5 индикаторов TradingView для профита</h3>
-              <p>Подборка самых эффективных индикаторов для технического анализа на TradingView.</p>
-              <a href="#" class="product-link" onclick="return false;">Читать <span class="arrow">→</span></a>
-            </div>
-          </article>
-
-          <article class="blog-card fade-in">
-            <div class="blog-card-body">
-              <div class="blog-date">Скоро</div>
-              <h3>Как настроить торгового робота: пошаговый гайд</h3>
-              <p>Подробное руководство по настройке и запуску автоматического торгового робота.</p>
-              <a href="#" class="product-link" onclick="return false;">Читать <span class="arrow">→</span></a>
-            </div>
-          </article>
-
-          <article class="blog-card fade-in">
-            <div class="blog-card-body">
-              <div class="blog-date">Скоро</div>
-              <h3>Копитрейдинг: стратегия для начинающих</h3>
-              <p>Разбираем, как работает копитрейдинг и как выбрать успешного трейдера для копирования.</p>
-              <a href="#" class="product-link" onclick="return false;">Читать <span class="arrow">→</span></a>
-            </div>
-          </article>
-
-          <article class="blog-card fade-in">
-            <div class="blog-card-body">
-              <div class="blog-date">Скоро</div>
-              <h3>Риск-менеджмент в автоматической торговле</h3>
-              <p>Как правильно управлять рисками при использовании торговых роботов и AI-инструментов.</p>
-              <a href="#" class="product-link" onclick="return false;">Читать <span class="arrow">→</span></a>
-            </div>
-          </article>
-
-          <article class="blog-card fade-in">
-            <div class="blog-card-body">
-              <div class="blog-date">Скоро</div>
-              <h3>Pine Script: создаём первый индикатор</h3>
-              <p>Введение в разработку индикаторов на Pine Script для платформы TradingView.</p>
-              <a href="#" class="product-link" onclick="return false;">Читать <span class="arrow">→</span></a>
-            </div>
-          </article>
+        <div class="page-hero-info">
+          <span class="section-badge">Блог</span>
+          <h1>Блог о <span class="text-gradient">трейдинге</span></h1>
+          <p>Полезные статьи, гайды и аналитика по трейдингу, AI-инструментам и автоматизации торговли.</p>
         </div>
       </div>
     </section>
+
+    <!-- ============================================================ -->
+    <!-- 2. Search + Tags -->
+    <!-- ============================================================ -->
+    <section class="blog-toolbar">
+      <div class="container">
+        <div class="blog-search-wrapper">
+          <svg class="blog-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" class="blog-search-input" id="blogSearch" placeholder="Поиск по статьям..." autocomplete="off" />
+        </div>
+        <div class="blog-tags" id="blogTags">
+          <button class="blog-tag active" data-tag="all">Все</button>
+          <button class="blog-tag" data-tag="btc">BTC</button>
+          <button class="blog-tag" data-tag="ethereum">Ethereum</button>
+          <button class="blog-tag" data-tag="forex">Форекс</button>
+          <button class="blog-tag" data-tag="indicators">Индикаторы</button>
+          <button class="blog-tag" data-tag="robots">Торговые роботы</button>
+          <button class="blog-tag" data-tag="copytrading">Копитрейдинг</button>
+          <button class="blog-tag" data-tag="risk">Риск-менеджмент</button>
+          <button class="blog-tag" data-tag="pinescript">Pine Script</button>
+          <button class="blog-tag" data-tag="bybit">Bybit</button>
+          <button class="blog-tag" data-tag="ai">AI трейдинг</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 3. Articles Grid -->
+    <!-- ============================================================ -->
+    <section class="page-section">
+      <div class="container">
+        <div class="blog-grid" id="blogGrid">
+
+          <article class="blog-card fade-in" data-tags="btc indicators ai">
+            <div class="blog-card-img" style="background: linear-gradient(135deg, #7C3AED, #A855F7);"></div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag">BTC</span>
+              <h3>Как AI помогает прогнозировать движение Bitcoin</h3>
+              <p>Разбираем, как машинное обучение анализирует исторические данные BTC и предсказывает ценовые уровни с высокой точностью.</p>
+              <div class="blog-card-meta">
+                <span>15 мин чтения</span>
+                <span>·</span>
+                <span>12 мая 2026</span>
+              </div>
+              <a href="#" class="blog-card-link" onclick="return false;">Читать <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="blog-card fade-in" data-tags="ethereum ai">
+            <div class="blog-card-img" style="background: linear-gradient(135deg, #3B82F6, #6366F1);"></div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Ethereum</span>
+              <h3>Ethereum и смарт-контракты: влияние на трейдинг</h3>
+              <p>Как развитие экосистемы Ethereum меняет подход к торговле криптовалютами и создаёт новые возможности.</p>
+              <div class="blog-card-meta">
+                <span>10 мин чтения</span>
+                <span>·</span>
+                <span>8 мая 2026</span>
+              </div>
+              <a href="#" class="blog-card-link" onclick="return false;">Читать <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="blog-card fade-in" data-tags="forex indicators">
+            <div class="blog-card-img" style="background: linear-gradient(135deg, #10B981, #34D399);"></div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Форекс</span>
+              <h3>Лучшие индикаторы для Форекс в 2026 году</h3>
+              <p>Обзор самых эффективных индикаторов технического анализа для валютного рынка. Какие инструменты реально работают.</p>
+              <div class="blog-card-meta">
+                <span>12 мин чтения</span>
+                <span>·</span>
+                <span>5 мая 2026</span>
+              </div>
+              <a href="#" class="blog-card-link" onclick="return false;">Читать <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="blog-card fade-in" data-tags="indicators pinescript">
+            <div class="blog-card-img" style="background: linear-gradient(135deg, #F59E0B, #F97316);"></div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Индикаторы</span>
+              <h3>Pine Script: создаём первый индикатор с нуля</h3>
+              <p>Пошаговое руководство по написанию собственного индикатора на Pine Script v5 для TradingView.</p>
+              <div class="blog-card-meta">
+                <span>20 мин чтения</span>
+                <span>·</span>
+                <span>30 апр 2026</span>
+              </div>
+              <a href="#" class="blog-card-link" onclick="return false;">Читать <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="blog-card fade-in" data-tags="robots ai risk">
+            <div class="blog-card-img" style="background: linear-gradient(135deg, #EC4899, #F472B6);"></div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Торговые роботы</span>
+              <h3>Риск-менеджмент в алгоритмической торговле</h3>
+              <p>Как настроить стоп-лоссы, диверсификацию и контроль просадок при использовании торговых роботов.</p>
+              <div class="blog-card-meta">
+                <span>15 мин чтения</span>
+                <span>·</span>
+                <span>25 апр 2026</span>
+              </div>
+              <a href="#" class="blog-card-link" onclick="return false;">Читать <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="blog-card fade-in" data-tags="copytrading bybit">
+            <div class="blog-card-img" style="background: linear-gradient(135deg, #06B6D4, #22D3EE);"></div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Копитрейдинг</span>
+              <h3>Копитрейдинг на Bybit: гайд для начинающих</h3>
+              <p>Подробная инструкция по настройке копитрейдинга на бирже Bybit. Как выбрать трейдера и управлять рисками.</p>
+              <div class="blog-card-meta">
+                <span>10 мин чтения</span>
+                <span>·</span>
+                <span>20 апр 2026</span>
+              </div>
+              <a href="#" class="blog-card-link" onclick="return false;">Читать <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="blog-card fade-in" data-tags="risk forex">
+            <div class="blog-card-img" style="background: linear-gradient(135deg, #4F46E5, #818CF8);"></div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Риск-менеджмент</span>
+              <h3>Управление капиталом: правила профессиональных трейдеров</h3>
+              <p>Основы риск-менеджмента: процент риска на сделку, расчёт лота, правило 2% и другие стратегии.</p>
+              <div class="blog-card-meta">
+                <span>12 мин чтения</span>
+                <span>·</span>
+                <span>15 апр 2026</span>
+              </div>
+              <a href="#" class="blog-card-link" onclick="return false;">Читать <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="blog-card fade-in" data-tags="bybit ai">
+            <div class="blog-card-img" style="background: linear-gradient(135deg, #EF4444, #F87171);"></div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Bybit</span>
+              <h3>AI-стратегии для торговли на Bybit</h3>
+              <p>Как использовать искусственный интеллект для анализа рынка на Bybit и автоматического выставления ордеров.</p>
+              <div class="blog-card-meta">
+                <span>18 мин чтения</span>
+                <span>·</span>
+                <span>10 апр 2026</span>
+              </div>
+              <a href="#" class="blog-card-link" onclick="return false;">Читать <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="blog-card fade-in" data-tags="ai indicators robots">
+            <div class="blog-card-img" style="background: linear-gradient(135deg, #14B8A6, #2DD4BF);"></div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag">AI трейдинг</span>
+              <h3>Будущее трейдинга: AI, роботы и нейросети</h3>
+              <p>Как искусственный интеллект меняет финансовые рынки: от индикаторов до полностью автоматизированных систем.</p>
+              <div class="blog-card-meta">
+                <span>15 мин чтения</span>
+                <span>·</span>
+                <span>5 апр 2026</span>
+              </div>
+              <a href="#" class="blog-card-link" onclick="return false;">Читать <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="blog-empty" id="blogEmpty" style="display:none;">
+          <p>Ни одной статьи не найдено. Попробуйте изменить запрос.</p>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer" role="contentinfo">
@@ -150,6 +275,7 @@
         <div>
           <h4>Ресурсы</h4>
           <ul class="footer-links">
+            <li><a href="../#faq">FAQ</a></li>
             <li><a href="../blog/index.html">Блог</a></li>
           </ul>
         </div>
@@ -172,5 +298,48 @@
   </footer>
 
   <script src="../assets/js/main.js"></script>
+  <script>
+  (function() {
+    const searchInput = document.getElementById('blogSearch');
+    const tagButtons = document.querySelectorAll('.blog-tag');
+    const cards = document.querySelectorAll('.blog-card');
+    const emptyState = document.getElementById('blogEmpty');
+
+    function filterCards() {
+      const query = searchInput.value.toLowerCase().trim();
+      const activeTag = document.querySelector('.blog-tag.active');
+      const tag = activeTag ? activeTag.dataset.tag : 'all';
+      let visibleCount = 0;
+
+      cards.forEach(function(card) {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const desc = card.querySelector('p').textContent.toLowerCase();
+        const cardTags = card.dataset.tags || '';
+
+        const matchesSearch = !query || title.includes(query) || desc.includes(query);
+        const matchesTag = tag === 'all' || cardTags.split(' ').includes(tag);
+
+        if (matchesSearch && matchesTag) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      emptyState.style.display = visibleCount === 0 ? '' : 'none';
+    }
+
+    searchInput.addEventListener('input', filterCards);
+
+    tagButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        tagButtons.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        filterCards();
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
