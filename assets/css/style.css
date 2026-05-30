@@ -1264,257 +1264,45 @@ h1, h2, h3, h4, h5, h6 {
   color: #FFFFFF;
 }
 
-/* --- Lead Magnet --- */
-.lead-magnet {
-  padding: 100px 0;
-  background: var(--color-bg);
+/* --- Banner — бесплатный индикатор --- */
+.banner {
+  background: var(--gradient-cta);
+  padding: 20px 0;
 }
 
-.lead-magnet-inner {
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 4px 40px rgba(108, 82, 229, 0.08);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-/* Left — offer */
-.offer {
-  padding: 48px;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.image-placeholder {
-  width: 100%;
-  height: 200px;
-  background: #f3f4f6;
-  border-radius: 14px;
-  border: 2px dashed #d1d5db;
+.banner-content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.image-placeholder span {
-  font-size: 13px;
-  color: #9ca3af;
+.banner-text {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
-.badge {
+.banner-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: #f0eeff;
-  color: #6c52e5;
-  font-size: 12px;
+  gap: 8px;
+  padding: 10px 24px;
+  background: #fff;
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
   font-weight: 600;
-  padding: 6px 14px;
-  border-radius: 100px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  width: fit-content;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all var(--transition);
+  white-space: nowrap;
 }
 
-.badge::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: #6c52e5;
-  border-radius: 50%;
-}
-
-.offer h2 {
-  font-size: 26px;
-  font-weight: 700;
-  color: #1a1a2e;
-  line-height: 1.3;
-}
-
-.offer h2 span {
-  color: #6c52e5;
-}
-
-.offer .subtitle {
-  font-size: 14px;
-  color: #6b7280;
-  line-height: 1.6;
-}
-
-.benefits {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.benefit {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.benefit-icon {
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  background: #f0eeff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.benefit p {
-  font-size: 14px;
-  color: #374151;
-  line-height: 1.5;
-}
-
-.divider {
-  height: 1px;
-  background: #f3f4f6;
-}
-
-.how-title {
-  font-size: 11px;
-  font-weight: 600;
-  color: #9ca3af;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 12px;
-}
-
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.step {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.step-num {
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  background: #6c52e5;
-  color: #fff;
-  border-radius: 50%;
-  font-size: 11px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.step p {
-  font-size: 13px;
-  color: #6b7280;
-  line-height: 1.5;
-}
-
-/* Right — form */
-.form-side {
-  background: linear-gradient(145deg, #6c52e5 0%, #8b6ff0 100%);
-  padding: 48px 44px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-side h3 {
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.3;
-}
-
-.form-side .form-sub {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.5;
-  margin-top: -8px;
-}
-
-.what-inside {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  padding: 18px 20px;
-}
-
-.what-inside-title {
-  font-size: 11px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.55);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 12px;
-}
-
-.inside-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.inside-item:last-child {
-  margin-bottom: 0;
-}
-
-.inside-item span {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.4;
-}
-
-.check {
-  width: 16px;
-  height: 16px;
-  min-width: 16px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.form-wrapper {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  overflow: hidden;
-  min-height: 240px;
-}
-
-.form-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 240px;
-  border: none;
-  display: block;
-}
-
-.form-note {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.form-note span {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
+.banner-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  color: var(--color-accent-hover);
 }
 
 /* --- Footer --- */
@@ -1807,20 +1595,14 @@ h1, h2, h3, h4, h5, h6 {
     padding: 24px;
   }
 
-  .lead-magnet-inner {
-    grid-template-columns: 1fr;
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .offer {
-    padding: 32px 24px;
-  }
-
-  .offer h2 {
-    font-size: 22px;
-  }
-
-  .form-side {
-    padding: 32px 24px;
+  .banner-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 

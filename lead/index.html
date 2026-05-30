@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лид-магнит — NewTrade.pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f8f8fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .section {
+    max-width: 1100px;
+    width: 100%;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 40px rgba(108, 82, 229, 0.08);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Левая часть — оффер */
+  .offer {
+    padding: 48px 48px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Пустое место под картинку */
+  .image-placeholder {
+    width: 100%;
+    height: 200px;
+    background: #f3f4f6;
+    border-radius: 14px;
+    border: 2px dashed #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-placeholder span {
+    font-size: 13px;
+    color: #9ca3af;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f0eeff;
+    color: #6c52e5;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: fit-content;
+  }
+
+  .badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #6c52e5;
+    border-radius: 50%;
+  }
+
+  .offer h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1.3;
+  }
+
+  .offer h2 span { color: #6c52e5; }
+
+  .offer .subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  .benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .benefit-icon {
+    width: 20px;
+    height: 20px;
+    background: #f0eeff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .benefit p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.5;
+  }
+
+  .divider {
+    height: 1px;
+    background: #f3f4f6;
+  }
+
+  .how-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .step-num {
+    width: 20px;
+    height: 20px;
+    background: #6c52e5;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .step p {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.5;
+  }
+
+  /* Правая часть — форма */
+  .form-side {
+    background: linear-gradient(145deg, #6c52e5 0%, #8b6ff0 100%);
+    padding: 48px 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-side h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  .form-side .form-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+    margin-top: -8px;
+  }
+
+  .what-inside {
+    background: rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+
+  .what-inside-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
+  .inside-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .inside-item:last-child { margin-bottom: 0; }
+
+  .inside-item span {
+    font-size: 13px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.4;
+  }
+
+  .check {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .form-wrapper {
+    flex: 1;
+    background: rgba(255,255,255,0.1);
+    border-radius: 14px;
+    overflow: hidden;
+    min-height: 240px;
+  }
+
+  .form-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    border: none;
+  }
+
+  .form-note {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .form-note span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  @media (max-width: 768px) {
+    .section { grid-template-columns: 1fr; }
+    .offer, .form-side { padding: 32px 24px; }
+    .offer h2 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="section">
+
+  <!-- Левая часть — оффер -->
+  <div class="offer">
+
+    <!-- Место под картинку -->
+    <div class="image-placeholder">
+      <span>Изображение карты ликвидности</span>
+    </div>
+
+    <div class="badge">Бесплатно</div>
+
+    <h2>Получи доступ к индикатору <span>зон ликвидности</span> для TradingView — бесплатно, установка 2 минуты</h2>
+
+    <p class="subtitle">С его помощью:</p>
+
+    <div class="benefits">
+      <div class="benefit">
+        <div class="benefit-icon">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2 6l3 3 5-5" stroke="#6c52e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p>Будешь видеть зоны куда движется цена</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2 6l3 3 5-5" stroke="#6c52e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p>Сможешь безопасно выставлять стопы</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2 6l3 3 5-5" stroke="#6c52e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p>Перестанешь бездумно входить и выходить в сделках</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div>
+      <p class="how-title">Как работает Liquidity Heatmap</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <p>Индикатор собирает данные ТОП бирж — Binance, Bybit, OKX, Bitget</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <p>AI-алгоритм анализирует и размечает график в режиме реального времени</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Правая часть — форма -->
+  <div class="form-side">
+
+    <div>
+      <h3>Получить индикатор бесплатно →</h3>
+      <p class="form-sub">Только для подписчиков · Код придёт на почту сразу</p>
+    </div>
+
+    <div class="what-inside">
+      <p class="what-inside-title">Что входит</p>
+      <div class="inside-item">
+        <svg class="check" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8l3.5 3.5L13 4" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Pine Script код — вставляешь в TradingView за 2 минуты</span>
+      </div>
+      <div class="inside-item">
+        <svg class="check" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8l3.5 3.5L13 4" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>PDF-инструкция: как читать карту и где ставить ордера</span>
+      </div>
+      <div class="inside-item">
+        <svg class="check" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8l3.5 3.5L13 4" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Еженедельный разбор зон ликвидности по топовым парам — на почту</span>
+      </div>
+    </div>
+
+    <div class="form-wrapper">
+      <iframe
+        frameborder="0"
+        id="iframewin"
+        width="100%"
+        height="100%"
+        src="https://zcv2-zcmp.maillist-manage.eu/ua/Optin?od=12ba7f3f56e5&zx=14aef34193&tD=13ef1a19e10f9539&sD=13ef1a19e10f961d">
+      </iframe>
+    </div>
+
+    <div class="form-note">
+      <span>🔒 Без спама · Отписка в один клик · Данные защищены</span>
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
