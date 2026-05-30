@@ -1584,6 +1584,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .blog-toolbar {
   padding: 0 0 40px;
+  margin-top: 48px;
 }
 
 .blog-search-wrapper {
