@@ -8,9 +8,8 @@
 <script>
   window.onRecaptchaLoad = function() {
     var recapDiv = document.getElementById('recapDiv');
-    var siteKey = document.getElementById('secretid');
-    if (recapDiv && siteKey && siteKey.value) {
-      try { grecaptcha.render(recapDiv, { sitekey: siteKey.value }); } catch(e) {}
+    if (recapDiv) {
+      try { grecaptcha.render(recapDiv, { sitekey: '6LdNeDUUAAAAABpwRBYbCMJvQoxLi4d31Oho0EBw' }); } catch(e) {}
     }
   };
 </script>
