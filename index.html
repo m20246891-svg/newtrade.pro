@@ -524,6 +524,10 @@
           <ul class="footer-links">
             <li><a href="#faq">FAQ</a></li>
             <li><a href="blog/index.html">Блог</a></li>
+            <li><a href="legal/disclaimer.html">Дисклеймер</a></li>
+            <li><a href="legal/privacy.html">Конфиденциальность</a></li>
+            <li><a href="legal/terms.html">Пользовательское соглашение</a></li>
+            <li><a href="legal/cookies.html">Cookie</a></li>
           </ul>
         </div>
         <div>
@@ -545,5 +549,29 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+
+  <!-- Cookie banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="container">
+      <p>Мы используем cookies для аналитики (Яндекс Метрика). Продолжая использовать сайт, вы соглашаетесь с нашей <a href="legal/privacy.html">Политикой конфиденциальности</a>.</p>
+      <button class="cookie-btn" id="cookieAccept">Принять</button>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    if (localStorage.getItem('cookieConsent') === 'accepted') return;
+    var banner = document.getElementById('cookieBanner');
+    var btn = document.getElementById('cookieAccept');
+    if (!banner || !btn) return;
+    setTimeout(function() { banner.classList.add('show'); }, 500);
+    btn.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      banner.classList.remove('show');
+      setTimeout(function() { banner.style.display = 'none'; }, 400);
+    });
+  })();
+  </script>
+
 </body>
 </html>
