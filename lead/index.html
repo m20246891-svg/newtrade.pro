@@ -5,15 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Лид-магнит — NewTrade.pro</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>
-  window.onRecaptchaLoad = function() {
-    var recapDiv = document.getElementById('recapDiv');
-    if (recapDiv) {
-      try { grecaptcha.render(recapDiv, { sitekey: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' }); } catch(e) {}
-    }
-  };
-</script>
-<script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" defer></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -331,13 +323,11 @@
   }
 
   /* reCAPTCHA */
-  #recapDiv {
+  .g-recaptcha {
     margin: 16px 0;
     min-height: 78px;
-  }
-
-  #recapDiv > div {
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
   }
 
   /* Success message */
@@ -578,7 +568,7 @@
                           </div>
                           <input type="hidden" id="secretid" value="6LdNeDUUAAAAAG5l7cJfv1AA5OKLslkrOa_xXxLs">
                           <div></div>
-                          <div id="recapDiv" style="margin:12px 0;"></div>
+                          <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" style="margin:12px 0;"></div>
                           <div id="REQUIRED_FIELD_TEXT" changetype="REQUIRED_FIELD_TEXT" name="SIGNUP_REQUIRED">*Required Fields</div>
                           <div>
                             <input type="submit" action="Save" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON" changetype="SIGNUP_SUBMIT_BUTTON_TEXT" value="Получить индикатор →">
