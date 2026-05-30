@@ -383,20 +383,6 @@
     animation: shake 0.4s ease;
   }
 
-  /* Success message */
-  #Zc_SignupSuccess {
-    background: rgba(255,255,255,0.15) !important;
-    border: 1.5px solid rgba(255,255,255,0.4) !important;
-    border-radius: 12px !important;
-    padding: 16px !important;
-  }
-
-  #signupSuccessMsg {
-    color: #ffffff !important;
-    font-family: 'Inter', sans-serif !important;
-    font-size: 14px !important;
-  }
-
   .form-note {
     display: flex;
     align-items: center;
@@ -619,6 +605,7 @@
 
 <script type='text/JavaScript' id="cmpSFMinJs" src='https://static.zohocdn.com/campaign/static8/js/optin.min.7d194fa014886f5ee8a9141a6f1d6a6d.js' onload="setupSF('sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4','ZCFORMVIEW',false)"></script>
 
+<script>
   setInterval(function() {
     var el = document.querySelector('input[name="CONTACT_EMAIL"]');
     if (el && !el.hasAttribute('placeholder')) {
