@@ -321,12 +321,6 @@
     transform: translateY(0);
   }
 
-  /* reCAPTCHA */
-  #recapDiv {
-    margin: 16px 0;
-    min-height: 78px;
-  }
-
   /* Success message */
   #Zc_SignupSuccess {
     position: static !important;
@@ -565,7 +559,6 @@
                           </div>
                           <input type="hidden" id="secretid" value="6LdNeDUUAAAAAG5l7cJfv1AA5OKLslkrOa_xXxLs">
                           <div></div>
-                          <div id="recapDiv"></div>
                           <div id="REQUIRED_FIELD_TEXT" changetype="REQUIRED_FIELD_TEXT" name="SIGNUP_REQUIRED">*Required Fields</div>
                           <div>
                             <input type="button" action="Save" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON" changetype="SIGNUP_SUBMIT_BUTTON_TEXT" value="Получить индикатор →">
@@ -588,7 +581,7 @@
                           <input type="hidden" id="duplicate_optin_response_in" value="0">
                           <input type="hidden" id="zc_formIx" name="zc_formIx" value="3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4">
                         </div>
-                        <input type="hidden" id="isCaptchaNeeded" value="true">
+                        <input type="hidden" id="isCaptchaNeeded" value="false">
                         <input type="hidden" id="superAdminCap" value="0">
                       </div>
                     </div>
@@ -624,15 +617,7 @@
 
 </section>
 
-<script src="https://www.google.com/recaptcha/api.js"></script>
 <script type='text/JavaScript' id="cmpSFMinJs" src='https://static.zohocdn.com/campaign/static8/js/optin.min.7d194fa014886f5ee8a9141a6f1d6a6d.js' onload="setupSF('sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4','ZCFORMVIEW',false)"></script>
-<script>
-  setTimeout(function() {
-    var rd = document.getElementById('recapDiv');
-    if (rd && typeof grecaptcha !== 'undefined') {
-      grecaptcha.render(rd, { sitekey: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' });
-    }
-  }, 1000);
 
   setInterval(function() {
     var el = document.querySelector('input[name="CONTACT_EMAIL"]');
