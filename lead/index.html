@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Лид-магнит — NewTrade.pro</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type='text/JavaScript' id="cmpSFMinJs" src='https://static.zohocdn.com/campaign/static8/js/optin.min.7d194fa014886f5ee8a9141a6f1d6a6d.js' onload="setupSF('sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4','ZCFORMVIEW',false)"></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -236,13 +237,114 @@
     border-radius: 14px;
     overflow: hidden;
     min-height: 240px;
+    padding: 16px;
   }
 
-  .form-wrapper iframe {
+  /* --- Zoho Form Styling --- */
+
+  /* Hide elements we don't need */
+  #SIGNUP_HEADING { display: none; }
+  #SIGNUP_DESCRIPTION { display: none; }
+  [name="SIGNUP_FORM_LABEL"] { display: none; }
+  #REQUIRED_FIELD_TEXT { display: none; }
+  #privacyNotes { display: none; }
+  #imgBlock { display: none; }
+  #errorMsgDiv { display: none; }
+  #dt_CONTACT_EMAIL { display: none; }
+  .form-wrapper br { display: none; }
+
+  /* Reset Zoho form containers */
+  #SIGNUP_BODY_ALL,
+  #customForm,
+  #SIGNUP_BODY {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #SIGNUP_BODY_ALL form,
+  #zcampaignOptinForm {
+    background: transparent !important;
+  }
+
+  /* Email input */
+  .form-wrapper input[name="CONTACT_EMAIL"] {
     width: 100%;
-    height: 100%;
-    min-height: 240px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.15);
+    color: #ffffff;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    backdrop-filter: blur(4px);
+    box-sizing: border-box;
+  }
+
+  .form-wrapper input[name="CONTACT_EMAIL"]::placeholder {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .form-wrapper input[name="CONTACT_EMAIL"]:focus {
+    border-color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.2);
+  }
+
+  /* Submit button */
+  .form-wrapper input[type="button"][name="SIGNUP_SUBMIT_BUTTON"],
+  #zcWebOptin {
+    width: 100%;
+    padding: 15px 24px;
+    border-radius: 12px;
     border: none;
+    background: #ffffff;
+    color: #6c52e5;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    margin-top: 12px;
+    letter-spacing: -0.01em;
+    -webkit-appearance: none;
+    outline: none;
+  }
+
+  .form-wrapper input[type="button"][name="SIGNUP_SUBMIT_BUTTON"]:hover,
+  #zcWebOptin:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  .form-wrapper input[type="button"][name="SIGNUP_SUBMIT_BUTTON"]:active,
+  #zcWebOptin:active {
+    transform: translateY(0);
+  }
+
+  /* Captcha */
+  .form-wrapper .g-recaptcha,
+  .form-wrapper [id*="recap"] {
+    margin: 12px 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  /* Success message */
+  #Zc_SignupSuccess {
+    background: rgba(255,255,255,0.15) !important;
+    border: 1.5px solid rgba(255,255,255,0.4) !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+  }
+
+  #signupSuccessMsg {
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
   }
 
   .form-note {
@@ -356,14 +458,60 @@
       </div>
     </div>
 
-    <div class="form-wrapper">
-      <iframe
-        frameborder="0"
-        id="iframewin"
-        width="100%"
-        height="100%"
-        src="https://zcv2-zcmp.maillist-manage.eu/ua/Optin?od=12ba7f3f56e5&zx=14aef34193&tD=13ef1a19e10f9539&sD=13ef1a19e10f961d">
-      </iframe>
+    <div class="form-wrapper" id="sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4">
+      <form method="POST" id="zcampaignOptinForm" action="https://zcv2-zcmp.maillist-manage.eu/weboptin.zc">
+        <div id="SIGNUP_BODY_ALL" name="SIGNUP_BODY_ALL">
+          <h1 id="SIGNUP_HEADING" name="SIGNUP_HEADING">Получи индикатор зон ликвидности бесплатно</h1>
+          <div id="SIGNUP_BODY" name="SIGNUP_BODY">
+            <div id="SIGNUP_DESCRIPTION">Только для подписчиков · Код придёт на почту сразу</div>
+            <div id="errorMsgDiv">&nbsp;&nbsp;Please correct the marked field(s) below.</div>
+            <div name="fieldsdivSf" class="zcsffieldsdiv">
+              <div class="zcsffield" fieldid="283474000000000015">
+                <div name="SIGNUP_FORM_LABEL">Адрес электронной почты контактного лица&nbsp;<span name="SIGNUP_REQUIRED">*</span></div>
+                <input name="CONTACT_EMAIL" type="email" required="true" value="" maxlength="100" />
+                <span id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
+              </div>
+            </div>
+            <div class="recaptcha" id="captchaOld" name="captchaContainer">
+              <div id="captchaParent">
+                <img src="//campaigns.zoho.eu/images/refresh_icon.png" onclick="loadCaptcha('https://campaigns.zoho.eu/campaigns/CaptchaVerify.zc?mode=generate',this,'#sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4');" id="relCaptcha" />
+                <div id="captchaDiv" captcha="true"><!-- Captcha will be rendered here --></div>
+                <input placeholder="Captcha" id="captchaText" name="captchaText" type="text" maxlength="100" />
+              </div>
+            </div>
+            <div id="REQUIRED_FIELD_TEXT" name="SIGNUP_REQUIRED">*Required Fields</div>
+            <div id="imgBlock"></div>
+            <div id="privacyNotes"></div>
+            <input type="button" action="Save" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON" value="Получить индикатор →" />
+          </div>
+          <input type="hidden" id="signupTmplName" value="large_form_2" />
+          <input type="hidden" id="recapThemeOptin" value="2" />
+          <input type="hidden" id="orgNameFull" value="Newtrade" />
+          <input type="hidden" id="recapTheme" value="2" />
+          <input type="hidden" id="isRecapIntegDone" value="false" />
+          <input type="hidden" id="recapMode" value="283474000000030237" />
+          <input type="hidden" id="signupFormType" value="LargeForm_Vertical" />
+          <input type="hidden" id="fieldBorder" value="" />
+          <input type="hidden" name="zc_trackCode" id="zc_trackCode" value="" />
+          <input type="hidden" name="viewFrom" id="viewFrom" value="URL_ACTION" />
+          <input type="hidden" id="submitType" name="submitType" value="optinCustomView" />
+          <input type="hidden" id="lD" name="lD" value="13ef1a19e10f9620" />
+          <input type="hidden" name="emailReportId" id="emailReportId" value="" />
+          <input type="hidden" name="zx" id="cmpZuid" value="14aef34193" />
+          <input type="hidden" name="zcvers" value="2.0" />
+          <input type="hidden" name="oldListIds" id="allCheckedListIds" value="" />
+          <input type="hidden" id="mode" name="mode" value="OptinCreateView" />
+          <input type="hidden" id="zcld" name="zcld" value="13ef1a19e10f9620" />
+          <input type="hidden" id="zctd" name="zctd" value="13ef1a19e10f9539" />
+          <input type="hidden" id="document_domain" value="" />
+          <input type="hidden" id="zc_Url" value="zcv2-zcmp.maillist-manage.eu" />
+          <input type="hidden" id="new_optin_response_in" value="0" />
+          <input type="hidden" id="duplicate_optin_response_in" value="0" />
+          <input type="hidden" id="zc_formIx" name="zc_formIx" value="3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4" />
+          <input type="hidden" id="isCaptchaNeeded" value="true" />
+          <input type="hidden" id="superAdminCap" value="0" />
+        </div>
+      </form>
     </div>
 
     <div class="form-note">
@@ -373,6 +521,13 @@
   </div>
 
 </section>
+
+<script>
+  var emailInput = document.querySelector('input[name="CONTACT_EMAIL"]');
+  if (emailInput) {
+    emailInput.setAttribute('placeholder', 'Введите ваш email');
+  }
+</script>
 
 </body>
 </html>
