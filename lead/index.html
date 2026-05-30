@@ -325,9 +325,18 @@
   /* reCAPTCHA */
   .g-recaptcha {
     margin: 16px 0;
+    padding: 16px;
     min-height: 78px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .g-recaptcha > * {
+    transform-origin: center;
   }
 
   /* Success message */
