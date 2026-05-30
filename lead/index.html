@@ -247,11 +247,12 @@
   #SIGNUP_DESCRIPTION { display: none; }
   [name="SIGNUP_FORM_LABEL"] { display: none; }
   #REQUIRED_FIELD_TEXT { display: none; }
-  #privacyNotes { display: none; }
-  #imgBlock { display: none; }
   #errorMsgDiv { display: none; }
   #dt_CONTACT_EMAIL { display: none; }
   .form-wrapper br { display: none; }
+  #capRequired { display: none; }
+  .recaptcha + div[style*="border-bottom"] { display: none; }
+  .form-wrapper div[style*="clear:both"] { display: none; }
 
   /* Reset Zoho form containers */
   #SIGNUP_BODY_ALL,
@@ -537,30 +538,44 @@
     </div>
 
     <div class="form-wrapper" id="sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4">
-      <form method="POST" id="zcampaignOptinForm" action="https://zcv2-zcmp.maillist-manage.eu/weboptin.zc">
+      <form method="POST" id="zcampaignOptinForm" action="https://zcv2-zcmp.maillist-manage.eu/weboptin.zc" target="_zcSignup">
         <div id="SIGNUP_BODY_ALL" name="SIGNUP_BODY_ALL">
-          <h1 id="SIGNUP_HEADING" name="SIGNUP_HEADING">Получи индикатор зон ликвидности бесплатно</h1>
+          <h1 id="SIGNUP_HEADING" name="SIGNUP_HEADING" changeid="SIGNUP_MSG" changetype="SIGNUP_HEADER">Получи индикатор зон ликвидности бесплатно</h1>
           <div id="SIGNUP_BODY" name="SIGNUP_BODY">
-            <div id="SIGNUP_DESCRIPTION">Только для подписчиков · Код придёт на почту сразу</div>
+            <div>
+              <div id="SIGNUP_DESCRIPTION" changeId="SIGNUP_MSG" changeType="SIGNUP_DESCRIPTION">Только для подписчиков · Код придёт на почту сразу</div>
+            </div>
             <div id="errorMsgDiv">&nbsp;&nbsp;Please correct the marked field(s) below.</div>
-            <div name="fieldsdivSf" class="zcsffieldsdiv">
-              <div class="zcsffield" fieldid="283474000000000015">
-                <div name="SIGNUP_FORM_LABEL">Адрес электронной почты контактного лица&nbsp;<span name="SIGNUP_REQUIRED">*</span></div>
-                <input name="CONTACT_EMAIL" type="email" required="true" value="" maxlength="100" />
-                <span id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
+            <div>
+              <div name="fieldsdivSf" class="zcsffieldsdiv">
+                <div class="zcsffield" fieldid="283474000000000015">
+                  <div>
+                    <div name="SIGNUP_FORM_LABEL">Адрес электронной почты контактного лица&nbsp;<span name="SIGNUP_REQUIRED">*</span></div>
+                    <div>
+                      <input name="CONTACT_EMAIL" changeItem="SIGNUP_FORM_FIELD" maxlength="100" type="email" required="true" value="" />
+                      <span id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
+                    </div>
+                    <div style="clear:both"></div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="recaptcha" id="captchaOld" name="captchaContainer">
-              <div id="captchaParent">
-                <img src="//campaigns.zoho.eu/images/refresh_icon.png" onclick="loadCaptcha('https://campaigns.zoho.eu/campaigns/CaptchaVerify.zc?mode=generate',this,'#sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4');" id="relCaptcha" />
-                <div id="captchaDiv" captcha="true"><!-- Captcha will be rendered here --></div>
-                <input placeholder="Captcha" id="captchaText" name="captchaText" type="text" maxlength="100" />
+              <div>
+                <div id="captchaParent">
+                  <img src="//campaigns.zoho.eu/images/refresh_icon.png" onclick="loadCaptcha('https://campaigns.zoho.eu/campaigns/CaptchaVerify.zc?mode=generate',this,'#sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4');" id="relCaptcha" />
+                  <div id="captchaDiv" captcha="true"><!-- Captch will be rendered here --></div>
+                  <input placeholder="Captcha" id="captchaText" name="captchaText" changeitem="SIGNUP_FORM_FIELD" maxlength="100" type="text" />
+                  <span name="SIGNUP_REQUIRED" id="capRequired">*</span>
+                </div>
               </div>
+              <div style="clear:both"></div>
             </div>
-            <div id="REQUIRED_FIELD_TEXT" name="SIGNUP_REQUIRED">*Required Fields</div>
-            <div id="imgBlock"></div>
-            <div id="privacyNotes"></div>
-            <input type="button" action="Save" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON" value="Получить индикатор →" />
+            <div style="border-bottom:#ebebeb dotted 1px; margin-top:10px; clear:both;"></div>
+            <div id="REQUIRED_FIELD_TEXT" changeType="REQUIRED_FIELD_TEXT" name="SIGNUP_REQUIRED">*Required Fields</div>
+            <div>
+              <input type="button" action="Save" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON" changetype="SIGNUP_SUBMIT_BUTTON_TEXT" value="Получить индикатор →" />
+            </div>
           </div>
           <input type="hidden" id="signupTmplName" value="large_form_2" />
           <input type="hidden" id="recapThemeOptin" value="2" />
