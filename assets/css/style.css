@@ -1757,10 +1757,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* ==========================================
-   Enhanced Animations & Effects
-   ========================================== */
-
 /* Hero entrance */
 .hero-badge {
   opacity: 0;
@@ -1965,73 +1961,3 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-accent-hover);
 }
 
-/* ==========================================
-   Cookie banner
-   ========================================== */
-
-.cookie-banner {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 700px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-  padding: 20px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  z-index: 9999;
-  animation: slideUp 0.4s ease;
-}
-
-@keyframes slideUp {
-  from { transform: translateX(-50%) translateY(100px); opacity: 0; }
-  to { transform: translateX(-50%) translateY(0); opacity: 1; }
-}
-
-.cookie-banner p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #6B7280;
-}
-
-.cookie-banner p a {
-  color: #7C3AED;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.cookie-btn {
-  flex-shrink: 0;
-  background: linear-gradient(135deg, #7C3AED, #A855F7);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 24px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-}
-
-.cookie-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
-}
-
-@media (max-width: 640px) {
-  .cookie-banner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cookie-btn {
-    width: 100%;
-  }
-}
