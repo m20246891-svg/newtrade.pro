@@ -5,15 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Лид-магнит — NewTrade.pro</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>
-  window.onRecaptchaLoad = function() {
-    var recapDiv = document.getElementById('recapDiv');
-    if (recapDiv) {
-      try { grecaptcha.render(recapDiv, { sitekey: '6LdNeDUUAAAAABpwRBYbCMJvQoxLi4d31Oho0EBw' }); } catch(e) {}
-    }
-  };
-</script>
-<script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" defer></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -330,18 +321,6 @@
     transform: translateY(0);
   }
 
-  /* reCAPTCHA */
-  #recapDiv {
-    margin: 16px 0;
-    border-radius: 12px;
-    overflow: hidden;
-    min-height: 78px;
-  }
-
-  #recapDiv > div {
-    margin: 0 auto;
-  }
-
   /* Success message */
   #Zc_SignupSuccess {
     position: static !important;
@@ -580,7 +559,6 @@
                           </div>
                           <input type="hidden" id="secretid" value="6LdNeDUUAAAAAG5l7cJfv1AA5OKLslkrOa_xXxLs">
                           <div></div>
-                          <div id="recapDiv" style="margin:12px 0;"></div>
                           <div id="REQUIRED_FIELD_TEXT" changetype="REQUIRED_FIELD_TEXT" name="SIGNUP_REQUIRED">*Required Fields</div>
                           <div>
                             <input type="submit" action="Save" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON" changetype="SIGNUP_SUBMIT_BUTTON_TEXT" value="Получить индикатор →">
@@ -603,7 +581,7 @@
                           <input type="hidden" id="duplicate_optin_response_in" value="0">
                           <input type="hidden" id="zc_formIx" name="zc_formIx" value="3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4">
                         </div>
-                        <input type="hidden" id="isCaptchaNeeded" value="true">
+                        <input type="hidden" id="isCaptchaNeeded" value="false">
                         <input type="hidden" id="superAdminCap" value="0">
                       </div>
                     </div>
