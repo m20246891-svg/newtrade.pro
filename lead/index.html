@@ -404,7 +404,8 @@
     80% { transform: translateX(4px); }
   }
 
-  .field-error {
+  input.field-error,
+  #captchaText.field-error {
     border-color: #ff4444 !important;
     box-shadow: 0 0 0 2px rgba(255,68,68,0.25) !important;
     animation: shake 0.4s ease;
@@ -600,21 +601,25 @@
 </section>
 
 <script>
-  var emailInput = document.querySelector('input[name="CONTACT_EMAIL"]');
-  if (emailInput) {
-    emailInput.setAttribute('placeholder', 'Введите ваш email');
-  }
+  setInterval(function() {
+    var el = document.querySelector('input[name="CONTACT_EMAIL"]');
+    if (el && !el.hasAttribute('placeholder')) {
+      el.setAttribute('placeholder', 'Введите ваш email');
+    }
+  }, 500);
 
-  function removeError(field) {
-    field.classList.remove('field-error');
-  }
+  document.addEventListener('click', function(e) {
+    if (e.target.id !== 'zcWebOptin') return;
 
-  document.getElementById('zcWebOptin').addEventListener('click', function(e) {
     var email = document.querySelector('input[name="CONTACT_EMAIL"]');
     var captcha = document.getElementById('captchaText');
     var hasError = false;
 
-    if (!email.value || !email.value.includes('@') || !email.value.includes('.')) {
+    [email, captcha].forEach(function(f) {
+      if (f) f.classList.remove('field-error');
+    });
+
+    if (!email.value || !email.value.includes('@')) {
       email.classList.add('field-error');
       hasError = true;
     }
@@ -628,9 +633,9 @@
       setTimeout(function() {
         email.classList.remove('field-error');
         captcha.classList.remove('field-error');
-      }, 1000);
+      }, 1200);
     }
-  });
+  }, true);
 </script>
 
 </body>
