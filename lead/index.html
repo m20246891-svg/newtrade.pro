@@ -395,6 +395,21 @@
 
   #capRequired { display: none; }
 
+  /* Error flash animation */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+  }
+
+  .field-error {
+    border-color: #ff4444 !important;
+    box-shadow: 0 0 0 2px rgba(255,68,68,0.25) !important;
+    animation: shake 0.4s ease;
+  }
+
   /* Success message */
   #Zc_SignupSuccess {
     background: rgba(255,255,255,0.15) !important;
@@ -589,6 +604,33 @@
   if (emailInput) {
     emailInput.setAttribute('placeholder', 'Введите ваш email');
   }
+
+  function removeError(field) {
+    field.classList.remove('field-error');
+  }
+
+  document.getElementById('zcWebOptin').addEventListener('click', function(e) {
+    var email = document.querySelector('input[name="CONTACT_EMAIL"]');
+    var captcha = document.getElementById('captchaText');
+    var hasError = false;
+
+    if (!email.value || !email.value.includes('@') || !email.value.includes('.')) {
+      email.classList.add('field-error');
+      hasError = true;
+    }
+
+    if (!captcha.value) {
+      captcha.classList.add('field-error');
+      hasError = true;
+    }
+
+    if (hasError) {
+      setTimeout(function() {
+        email.classList.remove('field-error');
+        captcha.classList.remove('field-error');
+      }, 1000);
+    }
+  });
 </script>
 
 </body>
