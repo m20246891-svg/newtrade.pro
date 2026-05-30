@@ -321,5 +321,11 @@
   </footer>
 
   <script src="../assets/js/main.js"></script>
+<div id="cookie-banner" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);width:90%;max-width:700px;background:white;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.15);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:99999;">
+  <p style="margin:0;font-size:14px;color:#6B7280;font-family:Inter,sans-serif;">Мы используем файлы cookie для улучшения работы сайта. Продолжая, вы соглашаетесь с нашей <a href="../legal/privacy.html" style="color:#7C3AED;">Политикой конфиденциальности</a>.</p>
+  <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookieAccepted','true')" style="background:linear-gradient(135deg,#7C3AED,#A855F7);color:white;border:none;border-radius:8px;padding:10px 24px;font-size:14px;cursor:pointer;white-space:nowrap;">Принять</button>
+</div>
+<script>if(localStorage.getItem('cookieAccepted'))document.getElementById('cookie-banner').style.display='none';</script>
+
 </body>
 </html>
