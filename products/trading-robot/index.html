@@ -49,6 +49,25 @@
   <noscript><div><img src="https://mc.yandex.ru/watch/109522451" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
 
+  <!-- Zoho Campaigns -->
+  <script type="text/javascript" src="https://static.zohocdn.com/campaign/static8/js/optin.min.7d194fa014886f5ee8a9141a6f1d6a6d.js" onload="setupSF('sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4','ZCFORMVIEW',false)"></script>
+  <script type="text/javascript">
+    function runOnFormSubmit_sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4(th){};
+  </script>
+  <script>
+    var recapTheme = 0;
+    var theme = "light";
+    var loadreCaptcha = function() {
+      if (document.getElementById('recapDiv')) {
+        widgetId1 = grecaptcha.render('recapDiv', {
+          'sitekey': '6LdNeDUUAAAAABpwRBYbCMJvQoxLi4d31Oho0EBw',
+          'theme': theme,
+        });
+      }
+    };
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js?onload=loadreCaptcha&render=explicit" async defer></script>
+
 </head>
 <body>
 
@@ -271,7 +290,19 @@
       </div>
     </section>
 
-  </main>
+      <!-- ============================================================ -->
+    <!-- Banner — бесплатный индикатор -->
+    <!-- ============================================================ -->
+    <section class="banner" aria-label="Бесплатный индикатор">
+      <div class="container">
+        <div class="banner-content">
+          <p class="banner-text">🎁 Получи бесплатный индикатор зон ликвидности</p>
+          <button class="banner-btn" onclick="openLeadModal()">Получить бесплатно →</button>
+        </div>
+      </div>
+    </section>
+
+</main>
 
   <footer class="footer" role="contentinfo">
     <div class="container">
@@ -326,6 +357,259 @@
   <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookieAccepted','true')" style="background:linear-gradient(135deg,#7C3AED,#A855F7);color:white;border:none;border-radius:8px;padding:10px 24px;font-size:14px;cursor:pointer;white-space:nowrap;">Принять</button>
 </div>
 <script>if(localStorage.getItem('cookieAccepted'))document.getElementById('cookie-banner').style.display='none';</script>
+
+
+<style>
+  /* Lead modal */
+  .lead-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 100000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .lead-modal-overlay.active { display: flex; }
+  .lead-modal {
+    background: #fff;
+    border-radius: 24px;
+    max-width: 520px;
+    width: 100%;
+    position: relative;
+    padding: 40px 36px 32px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+    animation: leadModalIn 0.25s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  @keyframes leadModalIn {
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .lead-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #F3F4F6;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #6B7280;
+    transition: background 0.2s;
+  }
+  .lead-modal-close:hover { background: #E5E7EB; color: #111827; }
+  .lead-modal h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 6px;
+    line-height: 1.3;
+  }
+  .lead-modal .modal-sub {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0 0 24px;
+    line-height: 1.5;
+  }
+
+  /* Zoho form inside modal */
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #SIGNUP_PAGE,
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #signupMainDiv {
+    background: transparent !important;
+    padding: 0 !important;
+    min-width: unset !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #SIGNUP_BODY_ALL,
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #SIGNUP_BODY {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #SIGNUP_HEADING,
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #SIGNUP_DESCRIPTION,
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #imgBlock,
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #REQUIRED_FIELD_TEXT,
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #privacyNotes,
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 [name="SIGNUP_FORM_LABEL"],
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #dt_CONTACT_EMAIL,
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 [style*="border-bottom:#ebebeb"] {
+    display: none !important;
+  }
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 .zcsffieldsdiv {
+    margin: 0 !important;
+    font-size: 0 !important;
+  }
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 .zcsffield {
+    padding: 0 0 12px 0 !important;
+    width: 100% !important;
+  }
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 input[name="CONTACT_EMAIL"] {
+    width: 100% !important;
+    height: 52px !important;
+    padding: 0 18px !important;
+    border-radius: 12px !important;
+    border: 1.5px solid #E5E7EB !important;
+    background: #F9FAFB !important;
+    color: #111827 !important;
+    font-size: 15px !important;
+    font-family: 'Inter', sans-serif !important;
+    text-indent: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 input[name="CONTACT_EMAIL"]:focus {
+    border-color: #7C3AED !important;
+    background: #fff !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(124,58,237,0.15) !important;
+  }
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #captcha {
+    margin: 0 0 16px !important;
+  }
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #zcWebOptin {
+    width: 100% !important;
+    height: 52px !important;
+    border-radius: 12px !important;
+    background: linear-gradient(135deg, #7C3AED, #A855F7) !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    font-family: 'Inter', sans-serif !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: transform 0.15s, box-shadow 0.15s !important;
+  }
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #zcWebOptin:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 8px 24px rgba(124,58,237,0.3) !important;
+  }
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #Zc_SignupSuccess {
+    background: #F0FFF4 !important;
+    border: 1.5px solid #10B981 !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    margin: 0 !important;
+    position: relative !important;
+    width: 100% !important;
+  }
+  .lead-modal #sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4 #signupSuccessMsg {
+    color: #059669 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+  }
+</style>
+
+<!-- Lead Modal -->
+<div class="lead-modal-overlay" id="leadModalOverlay" onclick="if(event.target===this)closeLeadModal()">
+  <div class="lead-modal" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    <button class="lead-modal-close" onclick="closeLeadModal()" aria-label="Закрыть">✕</button>
+    <h3 id="leadModalTitle">Получи индикатор зон ликвидности бесплатно</h3>
+    <p class="modal-sub">Установка 2 минуты · Только для подписчиков</p>
+
+    <div id="sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4" data-type="signupform">
+      <div id="customForm">
+        <input type="hidden" id="recapTheme" value="0"/>
+        <input type="hidden" id="isRecapIntegDone" value="false"/>
+        <input type="hidden" id="recapMode" value="283474000000030237"/>
+        <input type="hidden" id="signupFormType" value="LargeForm_Vertical"/>
+        <div name="SIGNUP_PAGE" id="SIGNUP_PAGE" style="display:block;">
+          <div id="signupMainDiv" name="SIGNUPFORM" changeid="SIGNUPFORM" changename="SIGNUPFORM">
+            <form method="POST" id="zcampaignOptinForm" style="margin:0px;" action="https://zcv2-zcmp.maillist-manage.eu/weboptin.zc" target="_zcSignup">
+              <div id="SIGNUP_BODY_ALL" name="SIGNUP_BODY_ALL">
+                <div style="display:none;background-color:#FFEBE8;padding:10px;color:#d20000;font-size:11px;margin:10px 0px;border:solid 1px #ffd9d3;" id="errorMsgDiv">&nbsp;&nbsp;Исправьте ошибки в указанных ниже полях.</div>
+                <div>
+                  <div class="zcsffieldsdiv">
+                    <div class="zcsffield" fieldid="283474000000000015" style="padding:0;">
+                      <div>
+                        <input name="CONTACT_EMAIL" changeItem="SIGNUP_FORM_FIELD" maxlength="100" type="email" required="true" value="" placeholder="Введите ваш email">
+                        <span style="display:none" id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div name="captcha" id="captcha">
+                    <div style="width:302px;overflow:hidden;max-width:100%" class="recaptcha" id="recapDiv"></div>
+                    <input type="hidden" id="secretid" value="6LdNeDUUAAAAAG5l7cJfv1AA5OKLslkrOa_xXxLs">
+                  </div>
+                  <div style="padding:0;">
+                    <input type="button" action="Save" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON" changetype="SIGNUP_SUBMIT_BUTTON_TEXT" value="Получить индикатор →">
+                  </div>
+                  <input type="hidden" id="fieldBorder" value="">
+                  <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW">
+                  <input type="hidden" name="viewFrom" value="URL_ACTION">
+                  <input type="hidden" name="submitType" value="optinCustomView">
+                  <input type="hidden" name="lD" value="13ef1a19e10f9620">
+                  <input type="hidden" name="emailReportId" value="">
+                  <input type="hidden" name="zx" value="14aef34193">
+                  <input type="hidden" name="zcvers" value="2.0">
+                  <input type="hidden" name="oldListIds" value="">
+                  <input type="hidden" name="mode" value="OptinCreateView">
+                  <input type="hidden" name="zcld" value="13ef1a19e10f9620">
+                  <input type="hidden" name="zctd" value="13ef1a19e10f9539">
+                  <input type="hidden" id="document_domain" value="">
+                  <input type="hidden" name="zc_Url" value="zcv2-zcmp.maillist-manage.eu">
+                  <input type="hidden" id="new_optin_response_in" value="0">
+                  <input type="hidden" id="duplicate_optin_response_in" value="0">
+                  <input type="hidden" name="zc_formIx" value="3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4">
+                </div>
+              </div>
+              <input type="hidden" id="isCaptchaNeeded" value="true"/>
+              <input type="hidden" id="superAdminCap" value="0"/>
+              <img src="https://zcv2-zcmp.maillist-manage.eu/images/spacer.gif" onload="referenceSetter(this);callBackAfterLoad_283474000000030237(this);" id="refImage" style="display:none;"/>
+            </form>
+            <script>
+              function callBackAfterLoad_283474000000030237(imgReferrence){
+                var fieldStr = '{"SIGNUP_SUBMIT_BUTTON":{"border":"none","color":"#fff","fontWeight":"700","background":"linear-gradient(135deg, #7C3AED, #A855F7)","borderRadius":"12px","fontFamily":"Inter","fontSize":"16px","height":"52px","width":"100%"},"SIGNUP_FORM_FIELD":{"border":"1.5px solid #E5E7EB","padding":"0 18px","backgroundColor":"#F9FAFB","outline":"none","fontFamily":"Inter","color":"#111827","borderRadius":"12px","fontSize":"15px","boxSizing":"border-box","textIndent":"0","height":"52px"}}';
+                var fieldValues = {};
+                try{ fieldValues = JSON.parse(fieldStr); }catch(err){}
+                themeParse(fieldValues, imgReferrence);
+                var val = null;
+                if(val != null && val != "null" && val != "") { signupformSetPrefillValues(val); }
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="position:relative;">
+      <div id="Zc_SignupSuccess" style="display:none;position:absolute;margin-left:4%;width:90%;background-color:white;padding:3px;border:3px solid rgb(194,225,154);margin-bottom:10px;word-break:break-all;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td width="10%"><img class="successicon" src="https://campaigns.zoho.eu/images/challangeiconenable.jpg" align="absmiddle"></td>
+            <td><span id="signupSuccessMsg" style="color:rgb(73,140,132);font-family:sans-serif;font-size:14px;word-break:break-word">&nbsp;&nbsp;Вы подписались! Проверьте почту.</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openLeadModal() {
+    document.getElementById('leadModalOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLeadModal() {
+    document.getElementById('leadModalOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLeadModal();
+  });
+</script>
+
 
 </body>
 </html>
