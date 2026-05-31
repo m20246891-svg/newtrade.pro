@@ -239,62 +239,39 @@
     padding: 16px;
   }
 
-  /* --- Zoho Form Styling --- */
+  /* --- Custom Form Styling --- */
 
-  /* Hide elements we don't need */
-  #SIGNUP_HEADING { display: none; }
-  #SIGNUP_DESCRIPTION { display: none; }
-  [name="SIGNUP_FORM_LABEL"] { display: none; }
-  #REQUIRED_FIELD_TEXT { display: none; }
-  #errorMsgDiv { display: none; }
-  #privacyNotes { display: none; }
-  #imgBlock { display: none; }
-  #SIGNUP_PAGE br { display: none; }
-  #secretid { display: none; }
-
-  /* Reset Zoho form containers */
-  #SIGNUP_BODY_ALL,
-  #customForm,
-  #SIGNUP_BODY {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    box-shadow: none !important;
-  }
-
-  #SIGNUP_BODY_ALL form,
-  #zcampaignOptinForm {
-    background: transparent !important;
-  }
-
-  /* Email input */
-  .form-wrapper input[name="CONTACT_EMAIL"] {
+  #zoho-optin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     width: 100%;
-    padding: 14px 16px;
+  }
+
+  #zoho-email {
+    width: 100%;
+    padding: 15px 18px;
     border-radius: 12px;
     border: 1.5px solid rgba(255,255,255,0.3);
     background: rgba(255,255,255,0.15);
     color: #ffffff;
     font-size: 15px;
-    font-family: 'Inter', sans-serif;
+    font-family: inherit;
     outline: none;
     transition: border-color 0.2s, background 0.2s;
-    backdrop-filter: blur(4px);
     box-sizing: border-box;
   }
 
-  .form-wrapper input[name="CONTACT_EMAIL"]::placeholder {
-    color: rgba(255,255,255,0.5);
+  #zoho-email::placeholder {
+    color: rgba(255,255,255,0.55);
   }
 
-  .form-wrapper input[name="CONTACT_EMAIL"]:focus {
+  #zoho-email:focus {
     border-color: rgba(255,255,255,0.7);
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.22);
   }
 
-  /* Submit button */
-  #zcWebOptin {
+  #zoho-submit {
     width: 100%;
     padding: 15px 24px;
     border-radius: 12px;
@@ -303,84 +280,43 @@
     color: #6c52e5;
     font-size: 15px;
     font-weight: 700;
-    font-family: 'Inter', sans-serif;
+    font-family: inherit;
     cursor: pointer;
-    transition: transform 0.15s, box-shadow 0.15s;
-    margin-top: 12px;
+    transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
     letter-spacing: -0.01em;
-    -webkit-appearance: none;
-    outline: none;
   }
 
-  #zcWebOptin:hover {
+  #zoho-submit:hover {
     transform: translateY(-1px);
     box-shadow: 0 8px 24px rgba(0,0,0,0.2);
   }
 
-  #zcWebOptin:active {
-    transform: translateY(0);
+  #zoho-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
   }
 
-  /* Success message */
-  #Zc_SignupSuccess {
-    position: static !important;
-    background: rgba(255,255,255,0.15) !important;
-    border: 1.5px solid rgba(255,255,255,0.4) !important;
-    border-radius: 12px !important;
-    padding: 16px !important;
-    margin: 0 0 16px 0 !important;
-    width: auto !important;
+  #zoho-error {
+    color: #fca5a5;
+    font-size: 13px;
+    margin-top: -6px;
   }
 
-  #signupSuccessMsg {
-    color: #ffffff !important;
-    font-family: 'Inter', sans-serif !important;
-    font-size: 14px !important;
-  }
-
-  .successicon {
-    filter: brightness(10);
-  }
-
-  #captchaText {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 10px;
-    border: 1.5px solid rgba(255,255,255,0.25);
-    background: rgba(255,255,255,0.12);
-    color: #fff;
+  #zoho-success {
+    background: rgba(255,255,255,0.15);
+    border: 1.5px solid rgba(255,255,255,0.4);
+    border-radius: 12px;
+    padding: 16px;
+    color: #ffffff;
     font-size: 14px;
-    font-family: 'Inter', sans-serif;
-    outline: none;
-    transition: border-color 0.2s, background 0.2s;
-    box-sizing: border-box;
+    text-align: center;
+    line-height: 1.5;
   }
 
-  #captchaText::placeholder {
-    color: rgba(255,255,255,0.45);
-  }
-
-  #captchaText:focus {
-    border-color: rgba(255,255,255,0.6);
-    background: rgba(255,255,255,0.18);
-  }
-
-  #capRequired { display: none; }
-
-  /* Error flash animation */
-  @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-6px); }
-    40% { transform: translateX(6px); }
-    60% { transform: translateX(-4px); }
-    80% { transform: translateX(4px); }
-  }
-
-  input.field-error,
-  #captchaText.field-error {
-    border-color: #ff4444 !important;
-    box-shadow: 0 0 0 2px rgba(255,68,68,0.25) !important;
-    animation: shake 0.4s ease;
+  /* Hide reCAPTCHA badge */
+  .grecaptcha-badge {
+    visibility: hidden;
   }
 
   .form-note {
@@ -494,133 +430,94 @@
       </div>
     </div>
 
-    <div class="form-wrapper" id="sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4">
-      <div id="customForm">
-        <input type="hidden" id="recapTheme" value="2">
-        <input type="hidden" id="isRecapIntegDone" value="false">
-        <input type="hidden" id="recapMode" value="283474000000030237">
-        <input type="hidden" id="signupFormType" value="LargeForm_Vertical">
-        <div name="SIGNUP_PAGE" id="SIGNUP_PAGE" class="SIGNUP_PAGE large_form_2_css">
-          <div>
-            <div name="" changeid="" changename="">
-              <div id="imgBlock" name="LOGO_DIV" logo="true"></div>
-            </div>
-            <br>
-            <div id="signupMainDiv" name="SIGNUPFORM" changeid="SIGNUPFORM" changename="SIGNUPFORM">
-              <div>
-                <div style="position:relative;">
-                  <div id="Zc_SignupSuccess" style="display:none;">
-                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                      <tbody>
-                        <tr>
-                          <td width="10%">
-                            <img class="successicon" src="https://zcv2-zcmp.maillist-manage.eu/images/challangeiconenable.jpg" align="absmiddle">
-                          </td>
-                          <td>
-                            <span id="signupSuccessMsg" style="color: rgb(73, 140, 132); font-family: sans-serif; font-size: 14px;">&nbsp;&nbsp;Thank you for Signing Up</span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <form method="POST" id="zcampaignOptinForm" action="https://zcv2-zcmp.maillist-manage.eu/weboptin.zc" target="_blank" onsubmit="zcScptlessSubmit(this)">
-                  <div id="SIGNUP_BODY_ALL" name="SIGNUP_BODY_ALL">
-                    <h1 id="SIGNUP_HEADING" name="SIGNUP_HEADING" changeid="SIGNUP_MSG" changetype="SIGNUP_HEADER">Получи индикатор зон ликвидности бесплатно</h1>
-                    <div id="SIGNUP_BODY" name="SIGNUP_BODY">
-                      <div>
-                        <div class="" changeid="SIGNUP_MSG" id="SIGNUP_DESCRIPTION" changetype="SIGNUP_DESCRIPTION">Только для подписчиков · Код придёт на почту сразу</div>
-                        <div id="errorMsgDiv">&nbsp;&nbsp;Исправьте ошибки в указанных ниже полях.</div>
-                        <div>
-                          <div name="fieldsdivSf" class="zcsffieldsdiv">
-                            <div class="zcsffield " fieldid="283474000000000015">
-                              <div>
-                                <div name="SIGNUP_FORM_LABEL">Адрес электронной почты контактного лица&nbsp;<span name="SIGNUP_REQUIRED">*</span></div>
-                                <div>
-                                  <input name="CONTACT_EMAIL" changeitem="SIGNUP_FORM_FIELD" maxlength="100" type="email" required="true" value="">
-                                </div>
-                              </div>
-                              <div></div>
-                            </div>
-                          </div>
-                          <input type="hidden" id="secretid" value="6LdNeDUUAAAAAG5l7cJfv1AA5OKLslkrOa_xXxLs">
-                          <div></div>
-                          <div id="REQUIRED_FIELD_TEXT" changetype="REQUIRED_FIELD_TEXT" name="SIGNUP_REQUIRED">*Required Fields</div>
-                          <div>
-                            <input type="button" action="Save" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON" changetype="SIGNUP_SUBMIT_BUTTON_TEXT" value="Получить индикатор →">
-                          </div>
-                          <input type="hidden" id="fieldBorder" value="">
-                          <input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW" onload="">
-                          <input type="hidden" name="viewFrom" id="viewFrom" value="URL_ACTION">
-                          <input type="hidden" id="submitType" name="submitType" value="optinCustomView">
-                          <input type="hidden" id="lD" name="lD" value="13ef1a19e10f9620">
-                          <input type="hidden" name="emailReportId" id="emailReportId" value="">
-                          <input type="hidden" name="zx" id="cmpZuid" value="14aef34193">
-                          <input type="hidden" name="zcvers" value="2.0">
-                          <input type="hidden" name="oldListIds" id="allCheckedListIds" value="">
-                          <input type="hidden" id="mode" name="mode" value="OptinCreateView">
-                          <input type="hidden" id="zcld" name="zcld" value="13ef1a19e10f9620">
-                          <input type="hidden" id="zctd" name="zctd" value="13ef1a19e10f9539">
-                          <input type="hidden" id="document_domain" value="">
-                          <input type="hidden" id="zc_Url" value="zcv2-zcmp.maillist-manage.eu">
-                          <input type="hidden" id="new_optin_response_in" value="0">
-                          <input type="hidden" id="duplicate_optin_response_in" value="0">
-                          <input type="hidden" id="zc_formIx" name="zc_formIx" value="3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4">
-                        </div>
-                        <input type="hidden" id="isCaptchaNeeded" value="false">
-                        <input type="hidden" id="superAdminCap" value="0">
-                      </div>
-                    </div>
-                    <div id="privacyNotes" identity="privacyNotes">
-                      <span>Примечание. В целях защиты персональных данных мы гарантируем полную конфиденциальность ваших данных.</span>
-                    </div>
-                  </div>
-                  <input type="hidden" id="scriptless" name="scriptless" value="yes">
-                  <input type="hidden" id="zc_spmSubmit" name="zc_spmSubmit" value="ZCSPMSUBMIT">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="form-wrapper">
+      <form id="zoho-optin-form" novalidate>
+        <input type="email" id="zoho-email" placeholder="Введите ваш email" required>
+        <div id="zoho-error" style="display:none;">Введите корректный email</div>
+        <button type="submit" id="zoho-submit">Получить индикатор →</button>
+        <div id="zoho-success" style="display:none;">✅ Проверьте почту — письмо с подтверждением уже там!</div>
 
-    <div id="zcOptinOverLay" oncontextmenu="return false" style="display:none;"></div>
-    <div id="zcOptinSuccessPopup" style="display:none;">
-      <span style="position:absolute;top:-16px;right:-14px;z-index:99999;cursor:pointer;" id="closeSuccess">
-        <img src="https://zcv2-zcmp.maillist-manage.eu/images/videoclose.png">
-      </span>
-      <div id="zcOptinSuccessPanel"></div>
+        <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW">
+        <input type="hidden" name="viewFrom" value="URL_ACTION">
+        <input type="hidden" name="submitType" value="optinCustomView">
+        <input type="hidden" name="lD" value="13ef1a19e10f9620">
+        <input type="hidden" name="emailReportId" value="">
+        <input type="hidden" name="zx" value="14aef34193">
+        <input type="hidden" name="zcvers" value="2.0">
+        <input type="hidden" name="oldListIds" value="">
+        <input type="hidden" name="mode" value="OptinCreateView">
+        <input type="hidden" name="zcld" value="13ef1a19e10f9620">
+        <input type="hidden" name="zctd" value="13ef1a19e10f9539">
+        <input type="hidden" name="zc_Url" value="zcv2-zcmp.maillist-manage.eu">
+        <input type="hidden" name="zc_formIx" value="3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4">
+        <input type="hidden" name="scriptless" value="yes">
+        <input type="hidden" id="isCaptchaNeeded" value="false">
+      </form>
     </div>
-
-    <script>
-      function zcScptlessSubmit(parentNode){
-        if(parentNode.querySelector("#zc_spmSubmit")){parentNode.querySelector("#zc_spmSubmit").remove();}parentNode.submit();
-      }
-    </script>
 
   </div>
 
 </section>
 
-<script type='text/JavaScript' id="cmpSFMinJs" src='https://static.zohocdn.com/campaign/static8/js/optin.min.7d194fa014886f5ee8a9141a6f1d6a6d.js' onload="setupSF('sf3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4','ZCFORMVIEW',false)"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Le2bAUtAAAAAPfMCVcq_gT4IX3mqzgAOVnM28_-"></script>
 
 <script>
-  setInterval(function() {
-    var el = document.querySelector('input[name="CONTACT_EMAIL"]');
-    if (el && !el.hasAttribute('placeholder')) {
-      el.setAttribute('placeholder', 'Введите ваш email');
-    }
+  document.getElementById('zoho-optin-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-    var err = document.getElementById('errorMsgDiv');
-    if (err && err.style.display === 'block') {
-      var email = document.querySelector('input[name="CONTACT_EMAIL"]');
-      if (email) email.classList.add('field-error');
-      setTimeout(function() {
-        if (email) email.classList.remove('field-error');
-      }, 1500);
+    const email = document.getElementById('zoho-email').value;
+    const errorDiv = document.getElementById('zoho-error');
+    const successDiv = document.getElementById('zoho-success');
+    const submitBtn = document.getElementById('zoho-submit');
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errorDiv.style.display = 'block';
+      return;
     }
-  }, 300);
+    errorDiv.style.display = 'none';
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправляем...';
+
+    try {
+      const token = await grecaptcha.execute('6Le2bAUtAAAAAPfMCVcq_gT4IX3mqzgAOVnM28_-', {action: 'submit'});
+
+      const formData = new URLSearchParams({
+        CONTACT_EMAIL: email,
+        zc_trackCode: 'ZCFORMVIEW',
+        viewFrom: 'URL_ACTION',
+        submitType: 'optinCustomView',
+        lD: '13ef1a19e10f9620',
+        emailReportId: '',
+        zx: '14aef34193',
+        zcvers: '2.0',
+        oldListIds: '',
+        mode: 'OptinCreateView',
+        zcld: '13ef1a19e10f9620',
+        zctd: '13ef1a19e10f9539',
+        zc_Url: 'zcv2-zcmp.maillist-manage.eu',
+        zc_formIx: '3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4',
+        scriptless: 'yes',
+        isCaptchaNeeded: 'false',
+      });
+
+      await fetch('https://zcv2-zcmp.maillist-manage.eu/weboptin.zc', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString(),
+      });
+
+      successDiv.style.display = 'block';
+      document.getElementById('zoho-email').style.display = 'none';
+      submitBtn.style.display = 'none';
+
+    } catch(err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Получить индикатор →';
+      alert('Ошибка отправки. Попробуйте ещё раз.');
+    }
+  });
 </script>
 
 </body>
