@@ -482,31 +482,20 @@
     try {
       const token = await grecaptcha.execute('6Le2bAUtAAAAAPfMCVcq_gT4IX3mqzgAOVnM28_-', {action: 'submit'});
 
-      const formData = new URLSearchParams({
-        CONTACT_EMAIL: email,
-        zc_trackCode: 'ZCFORMVIEW',
-        viewFrom: 'URL_ACTION',
-        submitType: 'optinCustomView',
-        lD: '13ef1a19e10f9620',
-        emailReportId: '',
-        zx: '14aef34193',
-        zcvers: '2.0',
-        oldListIds: '',
-        mode: 'OptinCreateView',
-        zcld: '13ef1a19e10f9620',
-        zctd: '13ef1a19e10f9539',
-        zc_Url: 'zcv2-zcmp.maillist-manage.eu',
-        zc_formIx: '3zf6889bd8b69a91b85d858ff20239e0473878926ef714e6d6b646dfce240991e4',
-        scriptless: 'yes',
-        isCaptchaNeeded: 'false',
+      const response = await fetch('https://newtrade-form.maxai3743.workers.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          recaptchaToken: token,
+        }),
       });
 
-      await fetch('https://zcv2-zcmp.maillist-manage.eu/weboptin.zc', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData.toString(),
-      });
+      const result = await response.json();
+
+      if (!result.success) {
+        throw new Error('Submission failed');
+      }
 
       successDiv.style.display = 'block';
       document.getElementById('zoho-email').style.display = 'none';
