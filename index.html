@@ -126,7 +126,7 @@
         <div class="hero-grid">
           <div class="hero-content">
             <span class="section-badge hero-badge">AI — Трейдинг</span>
-            <h1 class="hero-title">Торгуй умнее<br />с <span class="text-gradient">искусственным интеллектом</span></h1>
+            <h1 class="hero-title">Торгуй умнее с <span class="text-gradient">искусственным интеллектом</span></h1>
             <p class="hero-subtitle">NewTrade.pro — профессиональные решения для трейдеров: индикаторы TradingView, торговые роботы и копитрейдинг на базе AI. Автоматизируй свою торговлю.</p>
             <div class="hero-actions hero-buttons">
               <a href="#products" class="btn btn-primary btn-lg">Начать торговать</a>
@@ -134,7 +134,7 @@
             </div>
           </div>
           <div class="hero-image">
-            <img src="/assets/images/hero-mockup.png" alt="AI инструменты для трейдинга" style="width:100%;max-width:640px;border-radius:16px;">
+            <img src="/assets/images/hero-mockup.png" alt="AI инструменты для трейдинга" style="width:100%;max-width:580px;display:block;border-radius:16px;">
           </div>
         </div>
 
@@ -1188,9 +1188,13 @@
     gap: 60px;
     align-items: center;
   }
+  .hero-title {
+    font-size: clamp(36px, 5vw, 64px);
+  }
   .hero-image {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
   }
   @media (max-width: 768px) {
     .hero-grid { grid-template-columns: 1fr; }
