@@ -106,8 +106,8 @@
           <p>Автоматизированная торговая система на базе машинного обучения. Работает 24/7, анализирует рынок и исполняет сделки без эмоций.</p>
           <a href="../../#products" class="btn btn-primary">Все продукты</a>
         </div>
-        <div class="page-hero-gif">
-          <img src="/assets/images/robot-hero.png" alt="Торговый робот" style="width:100%;border-radius:16px;">
+        <div class="page-hero-gif robot-hero-gif">
+          <img src="/assets/images/robot-hero.png" alt="Торговый робот" style="width:100%;max-width:100%;border-radius:16px;object-fit:contain;">
         </div>
       </div>
     </section>
@@ -506,6 +506,13 @@
   @media (max-width: 768px) {
     .page-hero .container { grid-template-columns: 1fr; }
     .page-hero-gif { display: none; }
+  }
+
+  /* Robot hero: remove aspect-ratio crop */
+  .robot-hero-gif {
+    aspect-ratio: unset !important;
+    overflow: visible !important;
+    align-items: flex-start !important;
   }
 </style>
 

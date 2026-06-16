@@ -134,7 +134,7 @@
             </div>
           </div>
           <div class="hero-image">
-            <img src="/assets/images/hero-mockup.png" alt="AI инструменты для трейдинга" style="width:100%;border-radius:16px;">
+            <img src="/assets/images/hero-mockup.png" alt="AI инструменты для трейдинга" style="width:100%;max-width:640px;border-radius:16px;">
           </div>
         </div>
 
@@ -1187,6 +1187,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
+  }
+  .hero-image {
+    display: flex;
+    justify-content: flex-end;
   }
   @media (max-width: 768px) {
     .hero-grid { grid-template-columns: 1fr; }
