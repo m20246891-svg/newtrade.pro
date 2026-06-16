@@ -107,16 +107,7 @@
           <a href="../../#products" class="btn btn-primary">Все продукты</a>
         </div>
         <div class="page-hero-gif">
-          <!--
-          НУЖНО СОЗДАТЬ: Инфографика 3 шагов — График с сигналом → Уведомление на телефоне → Открытая сделка. 1200x400px
-          Сохранить в: assets/demo-copytrade.gif
-          -->
-          <div class="gif-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-            <span>Превью копитрейдинга · 1200×400px</span>
-          </div>
+          <img src="/assets/images/copytrade-hero.png" alt="Копитрейдинг" style="width:100%;border-radius:16px;">
         </div>
       </div>
     </section>
@@ -212,14 +203,7 @@
         <div class="screenshot-block">
           <div class="screenshot-glow"></div>
           <div class="screenshot-inner">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <p>Скриншот интерфейса копитрейдинга: график сделок, статистика доходности, список копирующих трейдеров</p>
-            <!--
-            НУЖНО СОЗДАТЬ: Скриншот интерфейса копитрейдинга Bybit — график сделок, статистика доходности. 1200x700px
-            Сохранить в: assets/images/copytrade-screenshot.png
-            -->
+            <img src="/assets/images/copytrade-steps.png" alt="Как работает копитрейдинг на Bybit" style="width:100%;border-radius:16px;">
           </div>
         </div>
       </div>
@@ -458,6 +442,18 @@
     color: #059669 !important;
     font-family: 'Inter', sans-serif !important;
     font-size: 14px !important;
+  }
+
+  /* Product hero grid */
+  .page-hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .page-hero .container { grid-template-columns: 1fr; }
+    .page-hero-gif { display: none; }
   }
 </style>
 
