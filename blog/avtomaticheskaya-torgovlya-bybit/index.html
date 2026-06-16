@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- PRIMARY SEO -->
+  <title>Автоматическая торговля на Bybit: настройка торгового бота за 10 минут | Блог newtrade.pro</title>
+  <meta name="description" content="Пошаговая инструкция по настройке торгового бота на Bybit: создание API-ключа, подключение, бэктест, запуск. Полное руководство по автоматической торговле на криптобирже Bybit." />
+  <meta name="keywords" content="автоматическая торговля, Bybit, торговый бот, настройка бота, API Bybit, бэктест, Paper Trading, алгоритмическая торговля, криптовалюта, VPS" />
+  <meta name="author" content="newtrade.pro" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://newtrade.pro/blog/avtomaticheskaya-torgovlya-bybit/" />
+
+  <meta name="article:published_time" content="2025-07-11T10:00:00+03:00" />
+  <meta name="article:modified_time" content="2025-07-25T12:00:00+03:00" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Автоматическая торговля на Bybit: настройка торгового бота за 10 минут" />
+  <meta property="og:description" content="Пошаговая инструкция по настройке торгового бота на Bybit: от API-ключа до первой автоматической сделки. Полное руководство для начинающих." />
+  <meta property="og:url" content="https://newtrade.pro/blog/avtomaticheskaya-torgovlya-bybit/" />
+  <meta property="og:site_name" content="newtrade.pro" />
+  <meta property="og:image" content="https://newtrade.pro/blog/avtomaticheskaya-torgovlya-bybit/banner.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="article:published_time" content="2025-07-11T10:00:00+03:00" />
+  <meta property="article:modified_time" content="2025-07-25T12:00:00+03:00" />
+  <meta property="article:author" content="newtrade.pro" />
+  <meta property="article:section" content="Торговые роботы" />
+  <meta property="article:tag" content="автоматическая торговля, Bybit, торговый бот, API, бэктест, настройка бота" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Автоматическая торговля на Bybit: настройка торгового бота за 10 минут" />
+  <meta name="twitter:description" content="Пошаговая инструкция по настройке торгового бота на Bybit: от API-ключа до первой сделки. Руководство для начинающих." />
+  <meta name="twitter:image" content="https://newtrade.pro/blog/avtomaticheskaya-torgovlya-bybit/banner.jpeg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Автоматическая торговля на Bybit: настройка торгового бота за 10 минут",
+    "description": "Пошаговая инструкция по настройке торгового бота на Bybit: создание API-ключа, подключение, бэктест, запуск. Полное руководство по автоматической торговле.",
+    "image": "https://newtrade.pro/blog/avtomaticheskaya-torgovlya-bybit/banner.jpeg",
+    "datePublished": "2025-07-11T10:00:00+03:00",
+    "dateModified": "2025-07-25T12:00:00+03:00",
+    "author": {
+      "@type": "Organization",
+      "name": "newtrade.pro",
+      "url": "https://newtrade.pro"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "newtrade.pro",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://newtrade.pro/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://newtrade.pro/blog/avtomaticheskaya-torgovlya-bybit/"
+    },
+    "keywords": "автоматическая торговля, Bybit, торговый бот, API, бэктест, настройка бота",
+    "articleSection": "Торговые роботы",
+    "inLanguage": "ru",
+    "wordCount": 2500,
+    "timeRequired": "PT10M"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://newtrade.pro/"},
+      {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://newtrade.pro/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "Автоматическая торговля на Bybit", "item": "https://newtrade.pro/blog/avtomaticheskaya-torgovlya-bybit/"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109522451','ym');ym(109522451,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109522451" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+
+  <style>
+    .blog-article { max-width: 780px; margin: 0 auto; padding: 48px 24px 64px; }
+    .blog-article h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; line-height: 1.25; margin-bottom: 16px; color: var(--color-text); }
+    .blog-article h2 { font-size: 24px; font-weight: 600; color: var(--color-primary); margin-top: 48px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--color-primary-light); }
+    .blog-article h3 { font-size: 20px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; color: var(--color-text); }
+    .blog-article p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; color: var(--color-text); }
+    .blog-article ul, .blog-article ol { font-size: 17px; line-height: 1.7; margin-bottom: 16px; padding-left: 24px; }
+    .blog-article li { margin-bottom: 8px; }
+    .blog-article strong { font-weight: 600; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--color-text-muted); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--color-border); }
+    .article-meta time, .article-meta .read-time, .article-meta .category { display: inline-flex; align-items: center; gap: 4px; }
+    .article-meta .category a { color: var(--color-primary); text-decoration: none; font-weight: 500; }
+    .article-meta .category a:hover { text-decoration: underline; }
+    .breadcrumbs { max-width: 780px; margin: 0 auto; padding: 24px 24px 0; font-size: 14px; color: var(--color-text-muted); }
+    .breadcrumbs ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+    .breadcrumbs li { display: inline; }
+    .breadcrumbs li+li::before { content: "→"; margin-right: 8px; color: var(--color-text-muted); }
+    .breadcrumbs a { color: var(--color-primary); text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+    .breadcrumbs [aria-current] { color: var(--color-text-muted); }
+    .callout { background: var(--color-surface); border-left: 4px solid var(--color-primary); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 24px 0; font-size: 15px; line-height: 1.6; }
+    .callout-info { border-left-color: var(--color-primary); background: var(--color-primary-light); }
+    .callout-warning { border-left-color: var(--color-amber); background: #FFFBEB; }
+    .callout-success { border-left-color: var(--color-green); background: #ECFDF5; }
+    .callout strong { display: block; font-size: 15px; margin-bottom: 6px; }
+    .blog-article blockquote { border-left: 4px solid var(--color-primary); margin: 24px 0; padding: 16px 24px; background: var(--color-surface); border-radius: 0 var(--radius) var(--radius) 0; font-style: italic; color: var(--color-text-muted); font-size: 16px; line-height: 1.6; }
+    .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: var(--radius); border: 1px solid var(--color-border); }
+    .blog-article table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 500px; }
+    .blog-article thead { background: var(--color-primary); color: #fff; }
+    .blog-article th { text-align: left; padding: 12px 16px; font-weight: 600; font-size: 14px; }
+    .blog-article td { padding: 10px 16px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+    .blog-article tbody tr:last-child td { border-bottom: none; }
+    .blog-article tbody tr:nth-child(even) { background: var(--color-surface); }
+    .author-box { background: var(--color-primary-light); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 24px; font-size: 14px; line-height: 1.6; color: var(--color-text); }
+    .author-box strong { color: var(--color-primary); }
+    .author-box a { color: var(--color-primary); text-decoration: none; font-weight: 500; }
+    .author-box a:hover { text-decoration: underline; }
+    .cta-block { background: linear-gradient(135deg, #7C3AED, #A855F7); border-radius: var(--radius); padding: 32px; margin: 40px 0; text-align: center; color: #fff; }
+    .cta-block h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; color: #fff !important; }
+    .cta-block p { font-size: 15px; line-height: 1.6; margin-bottom: 20px; color: rgba(255,255,255,0.9) !important; }
+    .cta-block .cta-btn { display: inline-block; background: #fff; color: #7C3AED; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .cta-block .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .article-footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--color-border); }
+    .article-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; font-size: 14px; }
+    .article-tags span { color: var(--color-text-muted); }
+    .article-tags a { display: inline-block; background: var(--color-surface); color: var(--color-primary); padding: 4px 12px; border-radius: 20px; font-size: 13px; text-decoration: none; border: 1px solid var(--color-border); }
+    .article-tags a:hover { background: var(--color-primary-light); border-color: var(--color-primary); }
+    .article-updated { font-size: 13px; color: var(--color-text-muted); }
+    .related-articles { max-width: 780px; margin: 48px auto; padding: 0 24px; }
+    .related-articles h2 { font-size: 22px; font-weight: 600; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .related-card { display: block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 20px; text-decoration: none; color: var(--color-text); transition: border-color 0.2s, box-shadow 0.2s; }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow); }
+    .related-card .related-cat { font-size: 12px; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .related-card h3 { font-size: 15px; font-weight: 600; margin: 0 0 8px; line-height: 1.4; color: var(--color-text); }
+    .related-card p { font-size: 13px; color: var(--color-text-muted); margin: 0; line-height: 1.5; }
+    .article-banner { width: 100%; max-width: 780px; height: auto; border-radius: var(--radius); margin: 0 auto 32px; display: block; }
+    .checklist { list-style: none; padding-left: 0 !important; }
+    .checklist li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--color-green); font-weight: 700; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } .blog-article { padding: 24px 16px 48px; } .breadcrumbs { padding: 16px 16px 0; } .cta-block { padding: 24px 16px; } .cta-block .cta-btn { display: block; width: 100%; } }
+  </style>
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="container">
+      <a href="/" class="logo" aria-label="NewTrade.pro на главную">
+        <span class="logo-icon">NT</span>
+        NewTrade<span class="logo-text-accent">.pro</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Основное меню">
+        <div class="nav-links">
+          <a href="/">Главная</a>
+          <a href="/products/indicators/">Индикаторы</a>
+          <a href="/products/trading-robot/">Торговый робот</a>
+          <a href="/products/copy-trading/">Копитрейдинг</a>
+          <a href="/blog/" class="active">Блог</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main role="main">
+
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <ol>
+        <li><a href="https://newtrade.pro/">Главная</a></li>
+        <li><a href="https://newtrade.pro/blog/">Блог</a></li>
+        <li aria-current="page">Автоматическая торговля на Bybit</li>
+      </ol>
+    </nav>
+
+    <article class="blog-article">
+
+      <header>
+        <h1>Автоматическая торговля на Bybit: настройка торгового бота за 10 минут</h1>
+        <div class="article-meta">
+          <time datetime="2025-07-11">11 июля 2025</time>
+          <span class="read-time">~10 минут чтения</span>
+          <span class="category"><a href="/blog/category/torgovye-roboty/">Торговые роботы</a></span>
+        </div>
+      </header>
+
+      <div class="author-box">
+        <strong>newtrade.pro</strong> — платформа для трейдеров с профессиональными инструментами для торговли на Bybit: <a href="https://newtrade.pro/products/trading-robot/">торговые роботы с проверенной стратегией</a>, авторские индикаторы для TradingView и копитрейдинг с верифицированной статистикой.
+      </div>
+
+      <img src="banner.jpeg" alt="Автоматическая торговля на Bybit — настройка торгового бота за 10 минут — newtrade.pro" title="Автоматическая торговля на Bybit: настройка бота" width="1200" height="630" loading="eager" class="article-banner" />
+
+      <p>«Настроить бота сложно» — один из главных мифов, который удерживает трейдеров от автоматизации. На деле базовую конфигурацию торгового робота на Bybit можно сделать за 10–15 минут при наличии готовой стратегии. Именно этому посвящена данная статья.</p>
+
+      <p>Пройдём весь путь: от создания API-ключа до первой автоматической сделки. Пошагово, без лишней теории — только то, что реально нужно для старта.</p>
+
+      <h2>Что понадобится перед началом</h2>
+      <ul>
+        <li>Аккаунт на Bybit (верифицированный, KYC пройден)</li>
+        <li>Пополненный баланс на торговом счёте (минимум $100–200 для старта)</li>
+        <li>Готовая торговая стратегия с чёткими правилами входа и выхода</li>
+        <li>Торговый бот или программа, поддерживающая API Bybit</li>
+      </ul>
+
+      <h2>Что такое API и почему без него не обойтись</h2>
+      <p>API (Application Programming Interface) — это защищённый канал связи между биржей и внешней программой. Когда вы создаёте API-ключ, вы выдаёте боту разрешение торговать от вашего имени — но строго в рамках заданных прав. Робот может открывать и закрывать позиции, но не может вывести ваши деньги.</p>
+
+      <p>API-ключ состоит из двух частей:</p>
+      <ul>
+        <li><strong>API Key</strong> — публичный идентификатор (как логин)</li>
+        <li><strong>API Secret</strong> — секретный ключ (как пароль). Показывается только один раз при создании — сохраните сразу</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <strong>Золотое правило безопасности</strong>
+        <p style="margin:0;">При создании API-ключа ВСЕГДА отключайте разрешение на вывод средств. Включайте только «Чтение» и «Торговля». Даже если ключ попадёт к злоумышленнику — деньги останутся на счёте. Также привяжите ключ к IP-адресу вашего сервера или компьютера.</p>
+      </div>
+
+      <h2>Пошаговая настройка: от нуля до первой сделки</h2>
+
+      <h3>Шаг 1. Создайте API-ключ на Bybit</h3>
+      <p>Войдите в личный кабинет Bybit и перейдите в раздел «Профиль» → «API-менеджмент». Нажмите «Создать новый ключ». Выберите тип: «Ключ для стороннего приложения». Задайте название (например, «MyTradingBot»).</p>
+      <ul>
+        <li>В разделе прав выберите: Чтение, Торговля деривативами / спотом. Вывод средств — ОБЯЗАТЕЛЬНО отключить.</li>
+        <li>Если бот работает на VPS — укажите IP-адрес сервера для ограничения доступа.</li>
+        <li>Нажмите «Подтвердить». Введите код из приложения 2FA.</li>
+        <li><strong>ВАЖНО:</strong> скопируйте и сохраните API Secret в надёжном месте — он показывается только один раз.</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <strong>Совет</strong>
+        <p style="margin:0;">Используйте менеджер паролей (Bitwarden, 1Password) для хранения API-ключей. Никогда не храните их в мессенджерах или заметках на телефоне.</p>
+      </div>
+
+      <h3>Шаг 2. Подключите бота к Bybit</h3>
+      <p>Откройте интерфейс вашего торгового бота (newtrade.pro или другой совместимый инструмент). Найдите раздел «Подключение биржи» или «Exchange Settings». Выберите биржу: Bybit. Вставьте API Key и API Secret в соответствующие поля. Выберите тип аккаунта: Spot (спот) или Derivatives (деривативы/фьючерсы). Нажмите «Проверить подключение» или «Test Connection». Если появился статус «Connected» с отображением баланса — подключение успешно.</p>
+
+      <div class="callout callout-warning">
+        <strong>Совет по безопасности</strong>
+        <p style="margin:0;">Никогда не вводите API-ключи на незнакомых сайтах. Проверяйте URL — фишинговые сайты копируют интерфейс популярных платформ.</p>
+      </div>
+
+      <h3>Шаг 3. Выберите торговую пару и таймфрейм</h3>
+      <p>Для старта выбирайте пары с высокой ликвидностью: BTC/USDT или ETH/USDT. Высокая ликвидность = минимальное проскальзывание = бот получает цену, близкую к расчётной. Таймфрейм для начинающих: 4H. Меньше сигналов, но выше их качество. Избегайте малоликвидных альткоинов на старте — широкий спред и непредсказуемые движения сведут на нет прибыль от стратегии.</p>
+
+      <div class="callout callout-info">
+        <strong>Совет</strong>
+        <p style="margin:0;">Протестируйте стратегию сначала на BTC/USDT — это самый предсказуемый и ликвидный актив на Bybit.</p>
+      </div>
+
+      <h3>Шаг 4. Настройте параметры стратегии</h3>
+      <ul>
+        <li>Укажите условия входа в позицию согласно вашей стратегии (например: RSI &lt; 32 и пересечение MACD)</li>
+        <li>Задайте направление торговли: только лонг, только шорт, или оба направления</li>
+        <li>Настройте условия выхода: стоп-лосс, тейк-профит, трейлинг-стоп</li>
+        <li>Укажите размер позиции: в % от депозита или в фиксированной сумме USDT</li>
+        <li>Задайте максимальное количество одновременных открытых сделок</li>
+        <li>При торговле фьючерсами — установите кредитное плечо (рекомендуется 1x–3x для старта)</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <strong>Совет</strong>
+        <p style="margin:0;">Начните с 1–2% от депозита на сделку. Это позволит пережить серию из 10+ убыточных сделок без критической просадки.</p>
+      </div>
+
+      <h3>Шаг 5. Запустите тест на исторических данных (бэктест)</h3>
+      <p>Перед запуском на реальные деньги — проверьте стратегию на истории. Минимальный период для теста: 6–12 месяцев, охватывающих разные рыночные условия.</p>
+      <p>Смотрите не только на итоговую доходность, но и на: максимальную просадку (Drawdown), процент прибыльных сделок (Winrate), среднее соотношение прибыль/убыток (RR), количество сделок (чем больше — тем надёжнее статистика).</p>
+      <p>Хороший результат: winrate 45–55% при RR 1:2 и просадке не более 20–25%.</p>
+
+      <div class="callout callout-warning">
+        <strong>Важно</strong>
+        <p style="margin:0;">Бэктест не гарантирует будущей прибыли, но позволяет отсечь заведомо убыточные стратегии до потери реальных денег.</p>
+      </div>
+
+      <h3>Шаг 6. Запустите бота в режиме Paper Trading</h3>
+      <p>Многие платформы поддерживают Paper Trading — торговлю с виртуальными деньгами на реальных ценах. Запустите бота в этом режиме на 2–4 недели. Убедитесь, что бот исполняет сделки именно так, как ожидалось: в правильные моменты, с правильными объёмами. Сравните результаты Paper Trading с бэктестом — если сильно расходятся, ищите причину.</p>
+
+      <div class="callout callout-info">
+        <strong>Совет</strong>
+        <p style="margin:0;">Paper Trading выявляет технические проблемы до того, как они стоят реальных денег.</p>
+      </div>
+
+      <h3>Шаг 7. Запустите на реальном счёте с минимальным капиталом</h3>
+      <p>Начните с суммы, потерю которой вы психологически готовы принять. Первый месяц — наблюдение: не вмешивайтесь в работу бота, если он действует по заданным правилам. Ведите журнал: фиксируйте каждую сделку, анализируйте отклонения от ожидаемого поведения. Только после 30–50 реальных сделок можно делать первые выводы об эффективности стратегии. Если всё работает стабильно 2–3 месяца — постепенно увеличивайте капитал.</p>
+
+      <div class="callout callout-warning">
+        <strong>Совет</strong>
+        <p style="margin:0;">Не увеличивайте капитал после первой же удачной недели. Дайте стратегии пройти через разные рыночные фазы.</p>
+      </div>
+
+      <h2>Рекомендуемые настройки для начинающих: шпаргалка</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Параметр</th>
+              <th scope="col">Рекомендуемое значение</th>
+              <th scope="col">Почему</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Торговая пара</td>
+              <td>BTC/USDT (начинающим), ETH/USDT</td>
+              <td>Высокая ликвидность, меньше проскальзывание</td>
+            </tr>
+            <tr>
+              <td>Таймфрейм</td>
+              <td>4H (оптимально для старта)</td>
+              <td>Меньше шума, чем на 1H и ниже</td>
+            </tr>
+            <tr>
+              <td>Размер позиции</td>
+              <td>1–3% от депозита на сделку</td>
+              <td>Защита от просадки при серии убытков</td>
+            </tr>
+            <tr>
+              <td>Кредитное плечо</td>
+              <td>1x–3x (максимум 5x для крипто)</td>
+              <td>Выше 10x — риск ликвидации резко растёт</td>
+            </tr>
+            <tr>
+              <td>Стоп-лосс</td>
+              <td>1.5–2 × ATR от точки входа</td>
+              <td>Обязателен. Торговля без стопа = рулетка</td>
+            </tr>
+            <tr>
+              <td>Тейк-профит</td>
+              <td>2–3 × стоп-лосс (RR 1:2 – 1:3)</td>
+              <td>Минимум 1:2, иначе стратегия не окупается</td>
+            </tr>
+            <tr>
+              <td>Макс. открытых сделок</td>
+              <td>1–3 одновременно (для старта)</td>
+              <td>Больше позиций = больше нагрузка на депозит</td>
+            </tr>
+            <tr>
+              <td>Время торговли</td>
+              <td>Избегать 00:00–06:00 UTC</td>
+              <td>Низкая ликвидность, высокое проскальзывание</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Типичные ошибки при первом запуске бота</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Частая ошибка</th>
+              <th scope="col">Как правильно</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Запуск без бэктеста, «просто попробовать»</td>
+              <td>Сначала тест на истории, потом Paper Trading, потом реал</td>
+            </tr>
+            <tr>
+              <td>Торговля с плечом 10x–20x «для разгона»</td>
+              <td>Максимум 3x–5x на крипто. Плечо усиливает убытки так же, как прибыль</td>
+            </tr>
+            <tr>
+              <td>Отключение бота после 2–3 убыточных сделок</td>
+              <td>Оценка только по выборке 50+ сделок. Убытки — часть системы</td>
+            </tr>
+            <tr>
+              <td>Запуск сразу на весь депозит</td>
+              <td>Старт с 10–20% капитала. Остальное — в резерве</td>
+            </tr>
+            <tr>
+              <td>Ручное вмешательство в открытые позиции</td>
+              <td>Либо доверяешь стратегии — либо нет. Частичное вмешательство ломает статистику</td>
+            </tr>
+            <tr>
+              <td>Игнорирование комиссий в расчётах</td>
+              <td>Учитывай комиссию Bybit (0.055% maker / 0.075% taker) при оценке прибыльности</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Мониторинг после запуска: что проверять и как часто</h2>
+      <p>Автоматическая торговля не означает «включил и забыл». Даже хорошо настроенный робот требует регулярного контроля — особенно в первые месяцы работы.</p>
+
+      <h3>Ежедневно (5 минут)</h3>
+      <ul>
+        <li>Проверить, что бот запущен и подключён к бирже</li>
+        <li>Посмотреть открытые позиции: нет ли зависших ордеров</li>
+        <li>Убедиться, что баланс соответствует ожидаемому</li>
+      </ul>
+
+      <h3>Еженедельно (20–30 минут)</h3>
+      <ul>
+        <li>Анализ всех сделок за неделю: winrate, средний RR, общий PnL</li>
+        <li>Сравнение с ожидаемыми показателями стратегии</li>
+        <li>Проверка логов на наличие ошибок исполнения</li>
+        <li>Оценка рыночных условий: изменился ли характер рынка?</li>
+      </ul>
+
+      <h3>Ежемесячно (1–2 часа)</h3>
+      <ul>
+        <li>Полный отчёт по стратегии за месяц</li>
+        <li>Сравнение с бэктестом: реальность vs ожидания</li>
+        <li>Решение: оставить настройки, скорректировать или остановить</li>
+        <li>При необходимости — переоптимизация параметров на свежих данных</li>
+      </ul>
+
+      <p>Торговый робот — это бизнес-инструмент. Как любой бизнес, он требует внимания, анализа и готовности адаптироваться. Те, кто относится к нему серьёзно, получают стабильный результат. Те, кто ищет «кнопку включить» — разочаровываются.</p>
+
+      <h2>Чеклист перед запуском: сохраните и проверьте</h2>
+      <ul class="checklist">
+        <li>API-ключ создан с правами «Только торговля», вывод отключён</li>
+        <li>API Secret сохранён в надёжном месте</li>
+        <li>Бот успешно подключён к Bybit (статус Connected)</li>
+        <li>Торговая пара выбрана с высокой ликвидностью</li>
+        <li>Стратегия протестирована на истории минимум 6 месяцев</li>
+        <li>Бэктест показал приемлемые просадку и winrate</li>
+        <li>Проведён Paper Trading минимум 2 недели</li>
+        <li>Размер позиции не превышает 2–3% депозита</li>
+        <li>Стоп-лосс установлен в каждой сделке</li>
+        <li>Журнал сделок настроен или создан вручную</li>
+        <li>Сумма запуска — только та, которую готов потерять</li>
+      </ul>
+
+      <h2>Вывод</h2>
+      <p>Настройка торгового бота на Bybit — это не ракетная наука. Сам процесс занимает 10–15 минут. Сложность — в том, что стоит за ним: продуманная стратегия, грамотный бэктест, дисциплина при мониторинге.</p>
+
+      <p>Именно поэтому большинство успешных алго-трейдеров используют готовые, проверенные решения, а не пишут роботов с нуля. Когда стратегия уже протестирована тысячами сделок и настроена под текущий рынок — остаётся только подключить и следить.</p>
+
+      <div class="cta-block">
+        <h3>Готовый бот для Bybit — без настройки с нуля</h3>
+        <p>Торговый робот newtrade.pro уже содержит проверенную стратегию, оптимальные параметры и подробную инструкцию по подключению к Bybit. Запуск — за один вечер.</p>
+        <a href="https://newtrade.pro/products/trading-robot/" class="cta-btn" title="Торговый робот для Bybit — newtrade.pro">Подключить бота на newtrade.pro →</a>
+      </div>
+
+      <footer class="article-footer">
+        <div class="article-tags">
+          <span>Теги:</span>
+          <a href="/blog/tag/avtomaticheskaya-torgovlya/">#АвтоматическаяТорговля</a>
+          <a href="/blog/tag/bybit/">#Bybit</a>
+          <a href="/blog/tag/torgovye-roboty/">#ТорговыеРоботы</a>
+          <a href="/blog/tag/api/">#API</a>
+          <a href="/blog/tag/nastroyka-bota/">#НастройкаБота</a>
+        </div>
+        <div class="article-updated">
+          Обновлено: <time datetime="2025-07-25">25 июля 2025</time>
+        </div>
+      </footer>
+
+    </article>
+
+    <section class="related-articles" aria-label="Читайте также">
+      <h2>Читайте также</h2>
+      <div class="related-grid">
+        <a href="/blog/torgovyj-robot-dlya-kriptovalyut/" class="related-card">
+          <div class="related-cat">Торговые роботы</div>
+          <h3>Торговый робот для криптовалют: как работает и сколько зарабатывает</h3>
+          <p>Всё об автоматической торговле: от механики алгоритмов до реальных цифр доходности.</p>
+        </a>
+        <a href="/blog/oshibki-pri-zapuske-bota/" class="related-card">
+          <div class="related-cat">Торговые роботы</div>
+          <h3>5 ошибок трейдеров, которые запускают бота без подготовки</h3>
+          <p>Разбор самых разрушительных ошибок при запуске торгового робота и как их избежать.</p>
+        </a>
+        <a href="/blog/luchshie-indikatory-tradingview/" class="related-card">
+          <div class="related-cat">Индикаторы TradingView</div>
+          <h3>Лучшие индикаторы TradingView 2025: топ-7 для новичков и профи</h3>
+          <p>Обзор 7 лучших индикаторов для TradingView с примерами настройки и результатами.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <span class="logo-icon">NT</span>
+            NewTrade<span class="logo-text-accent">.pro</span>
+          </a>
+          <p>AI-инструменты для профессионального трейдинга. Торгуйте умнее с NewTrade.pro.</p>
+        </div>
+        <div>
+          <h4>Продукты</h4>
+          <ul class="footer-links">
+            <li><a href="/products/indicators/">Индикаторы TradingView</a></li>
+            <li><a href="/products/trading-robot/">Торговый робот</a></li>
+            <li><a href="/products/copy-trading/">Копитрейдинг</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ресурсы</h4>
+          <ul class="footer-links">
+            <li><a href="/blog/">Блог</a></li>
+            <li><a href="/legal/disclaimer/">Дисклеймер</a></li>
+            <li><a href="/legal/privacy/">Конфиденциальность</a></li>
+            <li><a href="/legal/terms/">Пользовательское соглашение</a></li>
+            <li><a href="/legal/cookies/">Cookie</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:info@newtrade.pro">Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NewTrade.pro. Все права защищены.</p>
+        <div class="footer-social">
+          <a href="mailto:info@newtrade.pro" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+
+  <div id="cookie-banner" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);width:90%;max-width:700px;background:white;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.15);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:99999;">
+    <p style="margin:0;font-size:14px;color:#6B7280;font-family:Inter,sans-serif;">Мы используем файлы cookie для улучшения работы сайта. Продолжая, вы соглашаетесь с нашей <a href="/legal/privacy/" style="color:#7C3AED;">Политикой конфиденциальности</a>.</p>
+    <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookieAccepted','true')" style="background:linear-gradient(135deg,#7C3AED,#A855F7);color:white;border:none;border-radius:8px;padding:10px 24px;font-size:14px;cursor:pointer;white-space:nowrap;">Принять</button>
+  </div>
+  <script>if(localStorage.getItem('cookieAccepted'))document.getElementById('cookie-banner').style.display='none';</script>
+
+</body>
+</html>
