@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- PRIMARY SEO -->
+  <title>Как читать RSI и MACD вместе: связка для точных сигналов | Блог newtrade.pro</title>
+  <meta name="description" content="Как использовать RSI и MACD вместе в TradingView: механика связки, условия входа, дивергенции, пошаговый алгоритм и когда не стоит торговать. С примерами для BTC и ETH." />
+  <meta name="keywords" content="RSI, MACD, индикаторы tradingview, технический анализ, дивергенция, осциллятор, трендовый индикатор, торговые сигналы, скользящая средняя, связка индикаторов, точка входа" />
+  <meta name="author" content="newtrade.pro" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://newtrade.pro/blog/rsi-i-macd-vmeste/" />
+
+  <meta name="article:published_time" content="2025-03-21T10:00:00+03:00" />
+  <meta name="article:modified_time" content="2025-04-05T12:00:00+03:00" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Как читать RSI и MACD вместе: связка, которую используют профи" />
+  <meta property="og:description" content="Как использовать RSI и MACD вместе в TradingView: механика связки, условия входа, дивергенции, пошаговый алгоритм и когда не стоит торговать." />
+  <meta property="og:url" content="https://newtrade.pro/blog/rsi-i-macd-vmeste/" />
+  <meta property="og:site_name" content="newtrade.pro" />
+  <meta property="og:image" content="https://newtrade.pro/blog/rsi-i-macd-vmeste/banner.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="article:published_time" content="2025-03-21T10:00:00+03:00" />
+  <meta property="article:modified_time" content="2025-04-05T12:00:00+03:00" />
+  <meta property="article:author" content="newtrade.pro" />
+  <meta property="article:section" content="Индикаторы TradingView" />
+  <meta property="article:tag" content="RSI, MACD, дивергенция, технический анализ, торговые сигналы" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Как читать RSI и MACD вместе: связка, которую используют профи" />
+  <meta name="twitter:description" content="Как использовать RSI и MACD вместе в TradingView: механика, условия входа, дивергенции и пошаговый алгоритм." />
+  <meta name="twitter:image" content="https://newtrade.pro/blog/rsi-i-macd-vmeste/banner.jpeg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Как читать RSI и MACD вместе: связка, которую используют профи",
+    "description": "Как использовать RSI и MACD вместе в TradingView: механика связки, условия входа, дивергенции, пошаговый алгоритм и когда не стоит торговать.",
+    "image": "https://newtrade.pro/blog/rsi-i-macd-vmeste/banner.jpeg",
+    "datePublished": "2025-03-21T10:00:00+03:00",
+    "dateModified": "2025-04-05T12:00:00+03:00",
+    "author": {
+      "@type": "Organization",
+      "name": "newtrade.pro",
+      "url": "https://newtrade.pro"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "newtrade.pro",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://newtrade.pro/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://newtrade.pro/blog/rsi-i-macd-vmeste/"
+    },
+    "keywords": "RSI, MACD, дивергенция, технический анализ, торговые сигналы",
+    "articleSection": "Индикаторы TradingView",
+    "inLanguage": "ru",
+    "wordCount": 2400,
+    "timeRequired": "PT9M"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://newtrade.pro/"},
+      {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://newtrade.pro/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "Как читать RSI и MACD вместе", "item": "https://newtrade.pro/blog/rsi-i-macd-vmeste/"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109522451','ym');ym(109522451,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109522451" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+
+  <style>
+    .blog-article { max-width: 780px; margin: 0 auto; padding: 48px 24px 64px; }
+    .blog-article h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; line-height: 1.25; margin-bottom: 16px; color: var(--color-text); }
+    .blog-article h2 { font-size: 24px; font-weight: 600; color: var(--color-primary); margin-top: 48px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--color-primary-light); }
+    .blog-article h3 { font-size: 20px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; color: var(--color-text); }
+    .blog-article p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; color: var(--color-text); }
+    .blog-article ul, .blog-article ol { font-size: 17px; line-height: 1.7; margin-bottom: 16px; padding-left: 24px; }
+    .blog-article li { margin-bottom: 8px; }
+    .blog-article strong { font-weight: 600; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--color-text-muted); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--color-border); }
+    .article-meta time, .article-meta .read-time, .article-meta .category { display: inline-flex; align-items: center; gap: 4px; }
+    .article-meta .category a { color: var(--color-primary); text-decoration: none; font-weight: 500; }
+    .article-meta .category a:hover { text-decoration: underline; }
+    .breadcrumbs { max-width: 780px; margin: 0 auto; padding: 24px 24px 0; font-size: 14px; color: var(--color-text-muted); }
+    .breadcrumbs ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+    .breadcrumbs li { display: inline; }
+    .breadcrumbs li+li::before { content: "→"; margin-right: 8px; color: var(--color-text-muted); }
+    .breadcrumbs a { color: var(--color-primary); text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+    .breadcrumbs [aria-current] { color: var(--color-text-muted); }
+    .callout { background: var(--color-surface); border-left: 4px solid var(--color-primary); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 24px 0; font-size: 15px; line-height: 1.6; }
+    .callout-info { border-left-color: var(--color-primary); background: var(--color-primary-light); }
+    .callout-warning { border-left-color: var(--color-amber); background: #FFFBEB; }
+    .callout-success { border-left-color: var(--color-green); background: #ECFDF5; }
+    .callout strong { display: block; font-size: 15px; margin-bottom: 6px; }
+    .blog-article blockquote { border-left: 4px solid var(--color-primary); margin: 24px 0; padding: 16px 24px; background: var(--color-surface); border-radius: 0 var(--radius) var(--radius) 0; font-style: italic; color: var(--color-text-muted); font-size: 16px; line-height: 1.6; }
+    .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: var(--radius); border: 1px solid var(--color-border); }
+    .blog-article table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 500px; }
+    .blog-article thead { background: var(--color-primary); color: #fff; }
+    .blog-article th { text-align: left; padding: 12px 16px; font-weight: 600; font-size: 14px; }
+    .blog-article td { padding: 10px 16px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+    .blog-article tbody tr:last-child td { border-bottom: none; }
+    .blog-article tbody tr:nth-child(even) { background: var(--color-surface); }
+    .author-box { background: var(--color-primary-light); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 24px; font-size: 14px; line-height: 1.6; color: var(--color-text); }
+    .author-box strong { color: var(--color-primary); }
+    .author-box a { color: var(--color-primary); text-decoration: none; font-weight: 500; }
+    .author-box a:hover { text-decoration: underline; }
+    .cta-block { background: linear-gradient(135deg, #7C3AED, #A855F7); border-radius: var(--radius); padding: 32px; margin: 40px 0; text-align: center; color: #fff; }
+    .cta-block h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; color: #fff !important; }
+    .cta-block p { font-size: 15px; line-height: 1.6; margin-bottom: 20px; color: rgba(255,255,255,0.9) !important; }
+    .cta-block .cta-btn { display: inline-block; background: #fff; color: #7C3AED; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .cta-block .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .article-footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--color-border); }
+    .article-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; font-size: 14px; }
+    .article-tags span { color: var(--color-text-muted); }
+    .article-tags a { display: inline-block; background: var(--color-surface); color: var(--color-primary); padding: 4px 12px; border-radius: 20px; font-size: 13px; text-decoration: none; border: 1px solid var(--color-border); }
+    .article-tags a:hover { background: var(--color-primary-light); border-color: var(--color-primary); }
+    .article-updated { font-size: 13px; color: var(--color-text-muted); }
+    .related-articles { max-width: 780px; margin: 48px auto; padding: 0 24px; }
+    .related-articles h2 { font-size: 22px; font-weight: 600; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .related-card { display: block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 20px; text-decoration: none; color: var(--color-text); transition: border-color 0.2s, box-shadow 0.2s; }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow); }
+    .related-card .related-cat { font-size: 12px; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .related-card h3 { font-size: 15px; font-weight: 600; margin: 0 0 8px; line-height: 1.4; color: var(--color-text); }
+    .related-card p { font-size: 13px; color: var(--color-text-muted); margin: 0; line-height: 1.5; }
+    .article-banner { width: 100%; max-width: 780px; height: auto; border-radius: var(--radius); margin: 0 auto 32px; display: block; }
+    .checklist { list-style: none; padding-left: 0 !important; }
+    .checklist li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--color-green); font-weight: 700; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } .blog-article { padding: 24px 16px 48px; } .breadcrumbs { padding: 16px 16px 0; } .cta-block { padding: 24px 16px; } .cta-block .cta-btn { display: block; width: 100%; } }
+  </style>
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="container">
+      <a href="/" class="logo" aria-label="NewTrade.pro на главную">
+        <span class="logo-icon">NT</span>
+        NewTrade<span class="logo-text-accent">.pro</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Основное меню">
+        <div class="nav-links">
+          <a href="/">Главная</a>
+          <a href="/products/indicators/">Индикаторы</a>
+          <a href="/products/trading-robot/">Торговый робот</a>
+          <a href="/products/copy-trading/">Копитрейдинг</a>
+          <a href="/blog/" class="active">Блог</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main role="main">
+
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <ol>
+        <li><a href="https://newtrade.pro/">Главная</a></li>
+        <li><a href="https://newtrade.pro/blog/">Блог</a></li>
+        <li aria-current="page">Как читать RSI и MACD вместе</li>
+      </ol>
+    </nav>
+
+    <article class="blog-article">
+
+      <header>
+        <h1>Как читать RSI и MACD вместе: связка, которую используют профи</h1>
+        <div class="article-meta">
+          <time datetime="2025-03-21">21 марта 2025</time>
+          <span class="read-time">~9 минут чтения</span>
+          <span class="category"><a href="/blog/category/indikatory-tradingview/">Индикаторы TradingView</a></span>
+        </div>
+      </header>
+
+      <div class="author-box">
+        <strong>newtrade.pro</strong> — платформа для трейдеров с профессиональными инструментами для торговли на Bybit: <a href="https://newtrade.pro/products/indicators/">авторские индикаторы для TradingView</a>, торговые роботы и копитрейдинг с верифицированной статистикой.
+      </div>
+
+      <img src="banner.jpeg" alt="Как читать RSI и MACD вместе — связка индикаторов для TradingView — newtrade.pro" title="RSI и MACD: связка, которую используют профессиональные трейдеры" width="1200" height="630" loading="eager" class="article-banner" />
+
+      <p>Большинство трейдеров знают RSI и MACD по отдельности. Они видели разборы в YouTube, читали статьи, пробовали на демо-счёте. Но использовать их вместе — совсем другая история. Именно в связке эти два инструмента превращаются из простых индикаторов в полноценную торговую систему.</p>
+
+      <p>В этой статье — конкретная механика: как RSI и MACD дополняют друг друга, какие сигналы стоит брать, а какие игнорировать, и как выглядит реальная точка входа по этой связке.</p>
+
+      <div class="callout callout-info">
+        <strong>⚡ Почему именно эта пара?</strong>
+        <p style="margin:0;">RSI измеряет скорость и силу движения (импульс). MACD показывает направление и смену тренда. Вместе они отвечают на два главных вопроса трейдера: «Куда движется рынок?» и «Не слишком ли поздно входить?»</p>
+      </div>
+
+      <h2>RSI: что он на самом деле измеряет</h2>
+      <p>RSI (Relative Strength Index) — это осциллятор от 0 до 100, разработанный Уэллсом Уайлдером в 1978 году. Он сравнивает средний размер растущих свечей со средним размером падающих за выбранный период (обычно 14 баров).</p>
+
+      <p><strong>Формула проста по смыслу:</strong></p>
+      <p><em>RSI = 100 – (100 / (1 + RS)), где RS = средний прирост за N периодов / среднее падение за N периодов</em></p>
+
+      <p><strong>Что это означает на практике:</strong></p>
+      <ul>
+        <li>RSI выше 70 — актив перекуплен. Покупатели «выдохлись», возможен откат или разворот</li>
+        <li>RSI ниже 30 — актив перепродан. Продавцы на исходе, возможен отскок вверх</li>
+        <li>RSI в зоне 40–60 — нейтральная территория, тренд без явного перегрева</li>
+        <li>RSI выше 50 — преобладает бычий импульс; ниже 50 — медвежий</li>
+      </ul>
+
+      <p>Главная ловушка RSI — воспринимать значение выше 70 как немедленный сигнал на продажу. В сильном тренде RSI может «висеть» в зоне перекупленности неделями. Это не баг — это фича.</p>
+
+      <p>Профессионалы используют RSI не только для уровней, но и для поиска дивергенций — ситуаций, когда цена и индикатор движутся в разные стороны. Это один из самых надёжных разворотных сигналов в техническом анализе.</p>
+
+      <h2>MACD: трендовый фильтр с сигнальной линией</h2>
+      <p>MACD (Moving Average Convergence Divergence) — трендовый индикатор, созданный Джеральдом Аппелем. Состоит из трёх элементов:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Элемент</th>
+              <th scope="col">Что показывает</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Линия MACD</td>
+              <td>Разница между EMA(12) и EMA(26). Отражает силу и направление тренда.</td>
+            </tr>
+            <tr>
+              <td>Сигнальная линия</td>
+              <td>EMA(9) от линии MACD. Сглаживает сигналы, фильтрует шум.</td>
+            </tr>
+            <tr>
+              <td>Гистограмма</td>
+              <td>Разница между линией MACD и сигнальной. Визуализирует силу расхождения.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Ключевые сигналы MACD:</strong></p>
+      <ul>
+        <li>Пересечение линий: MACD пересекает сигнальную снизу вверх → покупка; сверху вниз → продажа</li>
+        <li>Пересечение нулевой линии: MACD выше нуля = бычий тренд; ниже = медвежий</li>
+        <li>Дивергенция: цена обновляет хай, MACD — нет → слабость тренда, возможен разворот</li>
+        <li>Гистограмма сокращается: тренд теряет силу, возможна смена направления</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <strong>⚠️ Слабость MACD в одиночку</strong>
+        <p style="margin:0;">MACD — запаздывающий индикатор. Он строится на скользящих средних, которые всегда отстают от цены. В боковом рынке MACD даёт много ложных сигналов. Именно здесь RSI приходит на помощь — как фильтр качества сигнала.</p>
+      </div>
+
+      <h2>Как работает связка RSI + MACD: механика</h2>
+      <p>Идея связки проста: MACD указывает направление и момент входа, RSI подтверждает, что рынок не перегрет. Если оба индикатора согласны — сигнал сильный. Если противоречат — лучше пропустить.</p>
+
+      <h3>Условие сильного сигнала на покупку (ЛОНГ)</h3>
+      <ul>
+        <li>MACD пересекает сигнальную линию снизу вверх (бычье пересечение)</li>
+        <li>Пересечение происходит ниже нулевой линии — особенно сильный сигнал</li>
+        <li>RSI находится в зоне 30–50 — актив не перекуплен, есть запас хода вверх</li>
+        <li>RSI направлен вверх, подтверждая нарастающий бычий импульс</li>
+      </ul>
+
+      <div class="callout callout-success">
+        <strong>✅ Пример: сигнал на покупку BTC/USDT (4H)</strong>
+        <p style="margin:0;">MACD(12,26,9) даёт бычье пересечение под нулевой линией • RSI(14) = 38 и разворачивается вверх • Цена отскакивает от уровня поддержки EMA 50 → Все три условия выполнены — высоковероятная точка входа в лонг</p>
+      </div>
+
+      <h3>Условие сильного сигнала на продажу (ШОРТ)</h3>
+      <ul>
+        <li>MACD пересекает сигнальную линию сверху вниз (медвежье пересечение)</li>
+        <li>Пересечение происходит выше нулевой линии — классический сигнал медвежьего разворота</li>
+        <li>RSI находится в зоне 50–70 — актив не перепродан, есть куда падать</li>
+        <li>RSI направлен вниз, подтверждая нарастающее давление продавцов</li>
+      </ul>
+
+      <div class="callout callout-success">
+        <strong>✅ Пример: сигнал на продажу ETH/USDT (4H)</strong>
+        <p style="margin:0;">MACD даёт медвежье пересечение над нулевой линией • RSI(14) = 64 и разворачивается вниз • Цена не смогла обновить предыдущий максимум (double top) → Три подтверждения — сильный сигнал на шорт</p>
+      </div>
+
+      <h2>Дивергенция RSI + MACD: двойной сигнал разворота</h2>
+      <p>Дивергенция — это ситуация, когда цена и индикатор движутся в противоположных направлениях. Она говорит о том, что текущее движение теряет силу и может развернуться. Когда дивергенцию показывают одновременно RSI и MACD — это один из самых надёжных разворотных сигналов в техническом анализе.</p>
+
+      <p><strong>Бычья дивергенция (разворот вверх):</strong> Цена делает новый минимум (Lower Low), а RSI и MACD — нет (Higher Low). Сигнал: продавцы слабеют, покупатели начинают доминировать → готовимся к лонгу.</p>
+
+      <p><strong>Медвежья дивергенция (разворот вниз):</strong> Цена делает новый максимум (Higher High), а RSI и MACD — нет (Lower High). Сигнал: покупатели выдыхаются, продавцы берут контроль → готовимся к шорту.</p>
+
+      <blockquote><p>Дивергенция — это не сигнал немедленного входа. Это предупреждение. Дождитесь подтверждения: пересечения MACD, пробоя уровня или паттерна на свечах.</p></blockquote>
+
+      <h2>Когда НЕ торговать по этой связке</h2>
+      <p>Даже самая хорошая связка индикаторов даёт ложные сигналы. Умение распознать «мусорный» сигнал важнее умения найти хороший.</p>
+      <ul>
+        <li><strong>Рынок в боковике (флэт).</strong> MACD будет давать хаотичные пересечения. Проверяй ADX: если ниже 20-25 — тренда нет, связка не работает</li>
+        <li><strong>Сигнал MACD слишком далеко от нулевой линии.</strong> Чем дальше пересечение от нуля, тем больший путь уже пройден. Входишь поздно — стоп большой, потенциал маленький</li>
+        <li><strong>RSI уже в экстремальной зоне.</strong> Если MACD дал сигнал на покупку, а RSI = 72 — рынок уже перегрет. Лучше пропустить</li>
+        <li><strong>Новостной фон.</strong> За 30 минут до важных данных (ФРС, NFP, CPI) любой технический анализ бессилен</li>
+        <li><strong>Таймфрейм меньше 15 минут.</strong> На 1M и 5M слишком много шума. MACD и RSI на малых тф дают 70%+ ложных сигналов</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <strong>💡 Правило двух таймфреймов</strong>
+        <p style="margin:0;">Смотри на MACD и RSI на старшем таймфрейме (4H или 1D) для определения направления. Входи на младшем (1H или 15M). Торгуй только в сторону старшего тренда — так количество ложных сигналов сокращается в разы.</p>
+      </div>
+
+      <h2>Пошаговый алгоритм входа по связке RSI + MACD</h2>
+      <p>Используй этот чеклист перед каждой сделкой:</p>
+      <ul class="checklist">
+        <li>Определи тренд на старшем таймфрейме (4H / 1D). Где находится цена относительно EMA 50 и EMA 200?</li>
+        <li>Проверь MACD на рабочем таймфрейме. Есть ли свежее пересечение? В какую сторону? Где относительно нуля?</li>
+        <li>Проверь RSI. Не перекуплен/не перепродан? Подтверждает ли направление сигнала MACD?</li>
+        <li>Найди точку входа. Идеально — на ретесте уровня после пересечения MACD. Не гонись за ценой</li>
+        <li>Установи стоп-лосс. За ближайший значимый уровень или по ATR (1,5–2 × ATR от точки входа)</li>
+        <li>Определи тейк-профит. Минимальное соотношение риск/прибыль — 1:2. Лучше 1:3</li>
+        <li>Запиши сделку в журнал. Через 50+ сделок ты увидишь, работает ли связка на твоём активе</li>
+      </ul>
+
+      <h2>Вывод</h2>
+      <p>RSI и MACD — это не магия и не «вечный прибыльный сигнал». Это инструменты фильтрации: они помогают отсеивать плохие точки входа и находить хорошие. RSI показывает, есть ли запас хода. MACD — что тренд уже начал меняться.</p>
+
+      <p>Вместе они работают именно потому, что измеряют разные вещи. Один — импульс, другой — тренд. Когда оба согласны, вероятность правильного входа существенно выше, чем при использовании любого из них по отдельности.</p>
+
+      <p>Следующий шаг — автоматизировать эту связку. Торговый робот не устаёт, не пропускает сигналы и не входит в позицию «на эмоциях». Именно это делает алгоритмическая торговля — и именно так работает инструментарий newtrade.pro.</p>
+
+      <div class="cta-block">
+        <h3>📊 Хотите автоматизировать стратегию RSI + MACD?</h3>
+        <p>На newtrade.pro — готовые индикаторы для TradingView, торговый робот и копитрейдинг на Bybit. Проверенные инструменты для тех, кто торгует серьёзно.</p>
+        <a href="https://newtrade.pro/products/indicators/" class="cta-btn" title="Авторские индикаторы для TradingView — newtrade.pro">Перейти на newtrade.pro →</a>
+      </div>
+
+      <footer class="article-footer">
+        <div class="article-tags">
+          <span>Теги:</span>
+          <a href="/blog/tag/rsi/">#RSI</a>
+          <a href="/blog/tag/macd/">#MACD</a>
+          <a href="/blog/tag/divergence/">#Дивергенция</a>
+          <a href="/blog/tag/tehnicheskiy-analiz/">#ТехническийАнализ</a>
+          <a href="/blog/tag/oscillator/">#Осциллятор</a>
+          <a href="/blog/tag/trend/">#Тренд</a>
+        </div>
+        <div class="article-updated">
+          Обновлено: <time datetime="2025-04-05">5 апреля 2025</time>
+        </div>
+      </footer>
+
+    </article>
+
+    <section class="related-articles" aria-label="Читайте также">
+      <h2>Читайте также</h2>
+      <div class="related-grid">
+        <a href="/blog/luchshie-indikatory-tradingview/" class="related-card">
+          <div class="related-cat">Индикаторы TradingView</div>
+          <h3>Лучшие индикаторы TradingView 2025: топ-7 для новичков и профессионалов</h3>
+          <p>Обзор 7 лучших индикаторов для TradingView с примерами настройки и реальными результатами.</p>
+        </a>
+        <a href="/blog/platnye-vs-besplatnye-indikatory/" class="related-card">
+          <div class="related-cat">Индикаторы TradingView</div>
+          <h3>Платные vs бесплатные индикаторы TradingView: в чём разница</h3>
+          <p>Честное сравнение: когда бесплатные инструменты не уступают платным, а когда плата оправдана.</p>
+        </a>
+        <a href="/blog/torgovyj-robot-dlya-kriptovalyut/" class="related-card">
+          <div class="related-cat">Торговые роботы</div>
+          <h3>Торговый робот для криптовалют: как работает и сколько зарабатывает</h3>
+          <p>Всё об автоматической торговле: от механики алгоритмов до реальных цифр доходности.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <span class="logo-icon">NT</span>
+            NewTrade<span class="logo-text-accent">.pro</span>
+          </a>
+          <p>AI-инструменты для профессионального трейдинга. Торгуйте умнее с NewTrade.pro.</p>
+        </div>
+        <div>
+          <h4>Продукты</h4>
+          <ul class="footer-links">
+            <li><a href="/products/indicators/">Индикаторы TradingView</a></li>
+            <li><a href="/products/trading-robot/">Торговый робот</a></li>
+            <li><a href="/products/copy-trading/">Копитрейдинг</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ресурсы</h4>
+          <ul class="footer-links">
+            <li><a href="/blog/">Блог</a></li>
+            <li><a href="/legal/disclaimer/">Дисклеймер</a></li>
+            <li><a href="/legal/privacy/">Конфиденциальность</a></li>
+            <li><a href="/legal/terms/">Пользовательское соглашение</a></li>
+            <li><a href="/legal/cookies/">Cookie</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:info@newtrade.pro">Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NewTrade.pro. Все права защищены.</p>
+        <div class="footer-social">
+          <a href="mailto:info@newtrade.pro" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+
+  <div id="cookie-banner" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);width:90%;max-width:700px;background:white;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.15);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:99999;">
+    <p style="margin:0;font-size:14px;color:#6B7280;font-family:Inter,sans-serif;">Мы используем файлы cookie для улучшения работы сайта. Продолжая, вы соглашаетесь с нашей <a href="/legal/privacy/" style="color:#7C3AED;">Политикой конфиденциальности</a>.</p>
+    <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookieAccepted','true')" style="background:linear-gradient(135deg,#7C3AED,#A855F7);color:white;border:none;border-radius:8px;padding:10px 24px;font-size:14px;cursor:pointer;white-space:nowrap;">Принять</button>
+  </div>
+  <script>if(localStorage.getItem('cookieAccepted'))document.getElementById('cookie-banner').style.display='none';</script>
+
+</body>
+</html>
